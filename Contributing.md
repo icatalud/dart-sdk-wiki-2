@@ -1,0 +1,90 @@
+Want to contribute? Great! First, read this page (including the small print at the end).
+
+## Ways you can contribute
+
+You can help the Dart project in many ways, in addition to contributing code. For example, you can [report bugs](http://dartbug.com), ask and answer [Dart questions on StackOverflow](http://stackoverflow.com/questions/tagged/dart), and improve the documentation.
+
+If you'd like to improve the documentation, you have three options:
+
+  * Give us feedback: [create a "Documentation issue/feedback" issue](https://code.google.com/p/dart/issues/entry?template=Documentation%20issue/feedback) in the Dart project. To see known doc issues, look for [issues where Area=Documentation](https://code.google.com/p/dart/issues/list?can=2&q=Area%3DDocumentation).
+  * Contribute to the Dart website, [www.dartlang.org](https://www.dartlang.org). The code and content for the Dart website is not in the main repo; it's in the [dartlang.org project on GitHub](https://github.com/dart-lang/dartlang.org). For more information, see [Writing for dartlang.org](https://github.com/dart-lang/dartlang.org/wiki/Writing-for-dartlang.org).
+  * Improve the API reference docs at [api.dartlang.org](https://api.dartlang.org) by editing doc comments in the Dart project. For more information, see [WritingApiDocumentation](WritingApiDocumentation.md).
+
+## Before you contribute
+
+Before we can use your code, you must sign the [Google Individual Contributor License Agreement](https://developers.google.com/open-source/cla/individual) (CLA), which you can do online.  The CLA is necessary mainly because you own the copyright to your changes, even after your contribution becomes part of our codebase, so we need your permission to use and distribute your code.  We also need to be sure of various other things—for instance that you'll tell us if you know that your code infringes on other people's patents.  You don't have to sign the CLA until after you've submitted your code for review and a member has approved it, but you must do it before we can put your code into our codebase.
+
+Before you start working on a larger contribution, you should get in touch with us first through the  [Dart Issue Tracker](http://dartbug.com) with your idea so that we can help out and possibly guide you. Coordinating up front makes it much easier to avoid frustration later on.
+
+All submissions, including submissions by project members, require review.  We use the same code-review tools and process as the chromium project.  In order to submit a patch, you need to get the [depot\_tools](http://dev.chromium.org/developers/how-tos/depottools).
+
+We occasionally take pull requests, e.g., for comment changes, but the main flow is to use the Rietveld review system as explained below.
+
+## Getting the code
+
+To work with the Dart code, you need to download and build the development branch. Active development of Dart takes place on the `master` branch, from which we push "green" versions that have passed all tests to `dev` branch. Complete instructions are found at [GettingTheSource](GettingTheSource)
+
+## Starting a patch with git
+
+```
+git new-branch <feature name>
+<write code>
+git commit
+<write code...>
+git commit
+...
+```
+
+## Uploading the patch for review
+
+Upload the patch for review:
+
+```
+git cl upload
+```
+
+The above command returns a URL for the review. Attach this review to your issue in http://dartbug.com
+
+If you have commit access, when the review is done and the patch is good to go, commit the patch:
+
+```
+git cl land
+```
+
+If you do not have commit access, a Dart engineer will commit for you, assuming the patch is reviewed and accepted.
+
+More detailed instructions for the `git cl` tools available on http://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_creating_uploading_a_cl
+
+## For committers: Merging external contributions
+
+If the author of a patch is not a committer, they will need help landing the patch.
+Once a patch gets an LGTM, it's easy for a committer to merge it in.
+
+```
+git checkout master
+git cl patch _patch_number_
+git cl land -c "Jane Dev <jane_dev@example.com>"
+```
+
+## Coding style
+
+The source code of Dart follows the:
+
+  * [Google C++ style guide](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml)
+  * [GWT style guide](http://code.google.com/webtoolkit/makinggwtbetter.html#codestyle)
+  * [Dart style guide](http://www.dartlang.org/articles/style-guide/)
+
+You should familiarize yourself with those guidelines.
+
+All files in the Dart project must start with the following header. If you add a new file please also add this. The year should be a single number (not a range; don't use "2011-2012", even if the original code did).  If you edit an existing file you don't have to update the year
+
+```
+// Copyright (c) 2012, the Dart project authors.  Please see the AUTHORS file
+// for details. All rights reserved. Use of this source code is governed by a
+// BSD-style license that can be found in the LICENSE file.
+```
+
+
+## The small print
+
+Contributions made by corporations are covered by a different agreement than the one above, the [Software Grant and Corporate Contributor License Agreement](http://code.google.com/legal/corporate-cla-v1.0.html).
