@@ -13,7 +13,7 @@ The following instructions will create a new checkout containing a Dart-enabled 
 
 ### Checkout for non-committers
 
-```
+```bash
 # Create a directory to work in.
 mkdir dartium-svn
 cd dartium-svn
@@ -38,26 +38,25 @@ You can use either subversion or git (or a mix if you prefer) to work in Blink a
 If you are merging Dartium to a new beta branch, we recommend git.
 
 ### Using Git
-```
+```bash
 # Check that we can authenticate with the Blink Subversion server. Use your password from https://chromium-access.appspot.com/
 svn ls svn://svn.chromium.org/blink
 
-# Check that we can authenticate with github for the Dart SDK. Set up ssh keys with Github if this fails.
-git ls-remotegit@github.com:dart-lang/sdk.git
-
+# Check that we can authenticate with GitHub for the Dart SDK. Set up ssh keys with Github if this fails.
+git ls-remote git@github.com:dart-lang/sdk.git
 
 # Create directory for your checkout.
 mkdir dartium-git
 cd dartium-git
 gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart git@github.com:dart-lang/sdk.git
 
-# Hide the Git repositories from gclient.
+# Hide the git-svn repository from gclient.
 # Edit your dartium-git/.gclient to include:
 "custom_deps" : {
      "src/third_party/WebKit" : None,
 },
 
-# Replace interesting subrepositories with Git checkouts.
+# Replace Blink with a git-svn checkout.
 git svn clone -rHEAD svn://svn.chromium.org/blink/branches/dart/dartium src/third_party/WebKit
 
 # Get latest version of all files
@@ -68,12 +67,12 @@ gclient runhooks
 ```
 
 ### Using Subversion (not recommended)
-```
+```bash
 # Check that we can authenticate with the Blink Subversion server. Use your password from https://chromium-access.appspot.com/
 svn ls svn://svn.chromium.org/blink
 
-# Check that we can authenticate with github for the Dart SDK. Set up ssh keys with Github if this fails.
-git ls-remotegit@github.com:dart-lang/sdk.git
+# Check that we can authenticate with GitHub for the Dart SDK. Set up ssh keys with Github if this fails.
+git ls-remote git@github.com:dart-lang/sdk.git
 
 # Create a directory and get the .gclient file.
 mkdir dartium-svn
@@ -206,7 +205,7 @@ From your Dart client, assuming it's a sibling of your Dartium client:
 
 ```
 ./tools/test.py --mode=release --compiler=none --runtime=dartium --dartium=../../dartium-git/src/out/Release/Chromium.app/Contents/MacOS/Chromium
-``
+```
 
 # Profiling
 See Profiling_the_Dart_VM_in_Dartium_on_Linux
