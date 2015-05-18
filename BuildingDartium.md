@@ -39,8 +39,12 @@ If you are merging Dartium to a new beta branch, we recommend git.
 
 ### Using Git
 ```
-# Check that we can authenticate. Use your password from https://chromium-access.appspot.com/
+# Check that we can authenticate with the Blink Subversion server. Use your password from https://chromium-access.appspot.com/
 svn ls svn://svn.chromium.org/blink
+
+# Check that we can authenticate with github for the Dart SDK. Set up ssh keys with Github if this fails.
+git ls-remotegit@github.com:dart-lang/sdk.git
+
 
 # Create directory for your checkout.
 mkdir dartium-git
@@ -65,8 +69,11 @@ gclient runhooks
 
 ### Using Subversion (not recommended)
 ```
-# Check that we can authenticate. Use your password from https://chromium-access.appspot.com/
+# Check that we can authenticate with the Blink Subversion server. Use your password from https://chromium-access.appspot.com/
 svn ls svn://svn.chromium.org/blink
+
+# Check that we can authenticate with github for the Dart SDK. Set up ssh keys with Github if this fails.
+git ls-remotegit@github.com:dart-lang/sdk.git
 
 # Create a directory and get the .gclient file.
 mkdir dartium-svn
@@ -106,7 +113,7 @@ cd src
 If you are using git, you need to separately update each git directory:
 
 ```
-git cl rebase
+git pull --rebase
 pushd dart; git pull --rebase; popd
 pushd third_party/WebKit; git cl rebase; popd
 ```
