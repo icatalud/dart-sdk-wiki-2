@@ -26,7 +26,7 @@ To work with the Dart code, you need to download and build the development branc
 
 ## Starting a patch with git
 
-```
+```bash
 git new-branch <feature name>
 <write code>
 git commit
@@ -39,7 +39,7 @@ git commit
 
 Upload the patch for review:
 
-```
+```bash
 git cl upload
 ```
 
@@ -47,7 +47,7 @@ The above command returns a URL for the review. Attach this review to your issue
 
 If you have commit access, when the review is done and the patch is good to go, commit the patch:
 
-```
+```bash
 git cl land
 ```
 
@@ -60,7 +60,7 @@ More detailed instructions for the `git cl` tools available on http://commondata
 If the author of a patch is not a committer, they will need help landing the patch.
 Once a patch gets an LGTM, it's easy for a committer to merge it in.
 
-```
+```bash
 git checkout master
 git cl patch _patch_number_
 git cl land -c "Jane Dev <jane_dev@example.com>"
@@ -77,7 +77,7 @@ You should familiarize yourself with those guidelines.
 
 All files in the Dart project must start with the following header. If you add a new file please also add this. The year should be a single number (not a range; don't use "2011-2012", even if the original code did).  If you edit an existing file you don't have to update the year
 
-```
+```dart
 // Copyright (c) 2012, the Dart project authors.  Please see the AUTHORS file
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
