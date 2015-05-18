@@ -16,12 +16,12 @@ Follow the instructions in the [PreparingYourMachine](PreparingYourMachine) page
 
 Follow the steps in [GettingTheSource](GettingTheSource) to retrieve everything. You will end up with a tree that looks like this:
 ```
-   sdk/
-     client/
-     pkg/
-     runtime/
-     tools/
-     ...
+sdk/
+  client/
+  pkg/
+  runtime/
+  tools/
+  ...
 ```
 
 ## Building everything
