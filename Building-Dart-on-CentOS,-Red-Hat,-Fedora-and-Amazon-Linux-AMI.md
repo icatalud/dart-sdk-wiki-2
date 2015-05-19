@@ -1,6 +1,4 @@
-Building Dart on CentOS, Red Hat, Fedora and Amazon Linux AMI
-
-(You can also build for Debian or Ubuntu 10.04 LTS.)
+(You can also build for [Debian](https://github.com/dart-lang/sdk/wiki/Building-Dart-SDK-on-Debian) or Ubuntu 10.04 LTS.)
 
 The standard recipe for setting up an Ubuntu machine for building Dart is referring to the default setup for developing Chromium. However this setup includes a lot of stuff which is not needed for just building the Dart SDK.
 
