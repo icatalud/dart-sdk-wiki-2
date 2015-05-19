@@ -3,7 +3,7 @@ You can also [browse](https://github.com/dart-lang/sdk) the repository or list t
 
 # Machine setup
 
-If your machine is already set up to build Chromium, then you should have all the prerequisites for building Dart. Otherwise prepare your machine according to these instructions: [Preparing Your Machine](PreparingYourMachine.md)
+If your machine is already set up to build Chromium, then you should have all the prerequisites for building Dart. Otherwise prepare your machine according to these instructions: [Preparing Your Machine](Preparing-your-machine-to-build-the-Dart-SDK)
 
 # Getting the source
 
