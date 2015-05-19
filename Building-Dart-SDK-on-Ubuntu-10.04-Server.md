@@ -1,6 +1,4 @@
-# Building Dart SDK on Ubuntu 10.04 Server
-
-(You can also build for Debian or CentOS).
+(You can also build for [Debian](https://github.com/dart-lang/sdk/wiki/Building-Dart-SDK-on-Debian) or [CentOS](https://github.com/dart-lang/sdk/wiki/Building-Dart-on-CentOS,-Red-Hat,-Fedora-and-Amazon-Linux-AMI)).
 
 This document assumes you have a new Ubuntu 10.04 server, and you want to build Dart SDK. If you have a modern Linux distro, or Mac or Windows, you can follow these instructions instead.
 
