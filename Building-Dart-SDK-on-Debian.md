@@ -1,4 +1,4 @@
-(You can also build for CentOS or [Ubuntu 10.04 LTS](https://github.com/dart-lang/sdk/wiki/Building-Dart-SDK-on-Ubuntu-10.04-Server).)
+(You can also build for [CentOS](https://github.com/dart-lang/sdk/wiki/Building-Dart-on-CentOS,-Red-Hat,-Fedora-and-Amazon-Linux-AMI) or [Ubuntu 10.04 LTS](https://github.com/dart-lang/sdk/wiki/Building-Dart-SDK-on-Ubuntu-10.04-Server).)
 
 The standard recipe for setting up an Ubuntu machine for building Dart is referring to the default setup for developing Chromium. However this setup includes a lot of stuff which is not needed for just building the Dart SDK.
 
