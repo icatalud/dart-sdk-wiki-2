@@ -22,7 +22,7 @@ We occasionally take pull requests, e.g., for comment changes, but the main flow
 
 ## Getting the code
 
-To work with the Dart code, you need to download and build the development branch. Active development of Dart takes place on the `master` branch, from which we push "green" versions that have passed all tests to `dev` branch. Complete instructions are found at [GettingTheSource](GettingTheSource)
+To work with the Dart code, you need to download and build the development branch. Active development of Dart takes place on the `master` branch, from which we push "green" versions that have passed all tests to `dev` branch. Complete instructions are found at [Getting The Source](Getting-The-Source)
 
 ## Starting a patch with git
 
