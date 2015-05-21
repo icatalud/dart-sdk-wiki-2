@@ -3,10 +3,10 @@
 If you are writing tests of core parts of the Dart SDK, there are special
 tools to run these tests on browsers. If you are writing tests for a package
 that is not part of the Dart SDK distribution, then
-[package:test](github.com/dart-lang/test/blob/master/README.md),
+[package:test](http://github.com/dart-lang/test/blob/master/README.md),
 previously called "unittest", is the best way for you to write your unit tests
 for browsers and the standalone Dart vm.  Published Dart packages are
-automatically tested using [Drone.io](readme.drone.io/pub/overview).
+automatically tested using [Drone.io](http://readme.drone.io/pub/overview).
 
 The remainder of this article is about the browser test infrastructure for
 core Dart libraries and tools in the Dart repository. These test suites
