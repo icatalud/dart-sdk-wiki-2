@@ -10,7 +10,7 @@ TODO(move the below wikis)
 
 # Configuring your machine
 
-Follow the instructions in the [PreparingYourMachine](PreparingYourMachine) page.
+Follow the instructions in the [PreparingYourMachine](Preparing-your-machine-to-build-the-Dart-SDK) page.
 
 # Building
 
