@@ -6,10 +6,10 @@ The steps described here should be sufficient for building the 64-bit Dart SDK o
 
 ## Install Subversion and the required build-tools
 
-Install the following packages to be able to build the Dart SDK. If just building the Dart standalone executable then openjdk-6-jdk is not required.
+Install the following packages to be able to build the Dart SDK.
 
 ```
-$ sudo yum -y install git subversion make gcc-c++ java-1.6.0-openjdk-devel
+$ sudo yum -y install git subversion make gcc-c++
 ```
 
 ## Get the depot_tools and add them to the path
