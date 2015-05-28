@@ -5,9 +5,13 @@ Our normal release cycle is roughly 2 months long, but we don't make any guarant
 
 On the normal 2 month cycle we use the first ~6 weeks doing full merges of master to dev, basically releasing a green build from master on dev roughly once a week. In case of bugs found quickly we do a patch release or another full push.
 
-We then spend the last ~3 weeks stabilizing the dev channel, only cherry picking critical fixes. People continue working on the master with normal changes. In this 3 week period we do multiple batches of cherry picks a week, and release those on dev as we have them build.
+We then spend the last ~3 weeks stabilizing the dev channel, only cherry picking critical fixes. People continue working on the master with normal changes. In this 3 week period we do multiple batches of cherry picks a week, and release those on dev as we have them build. We call this cherry-pick season.
 
 Once we have something that looks good we merge it to stable and release it there. During the 2 months we do patch security, crash and critical bug releases on stable based on the last stable version.
+
+## Getting your changes to dev channel during cherry pick season
+We batch up cherry picks and do pushes a number of times a week. If you have a cl that you think should make it to the current release, please file a bug at:
+https://code.google.com/p/dart/issues/entry?template=Merge%20request%20from%20developer
 
 ## Pushing to dev
 Find a suitable green build on master, by looking at the bots, we call this #MASTER_HASH_TO_BASE_RELEASE_OFF. We call the version we are pushing $THE_VERSION_BEING_PUSHED, this is based on the actual values in tools/VERSION, but looks like this "1.11.0-dev.3.0". 
@@ -44,6 +48,8 @@ git push --tags
 ```
 
 ## Cherry picking to dev
+Please don't just cherry pick your changes to dev, we normally batch these up. Instead file a merge request (see above).
+
 $THE_VERSION_BEING_PUSHED has the same meaning as above. The #HASH_1 ... #HASH_N are the cls we want to cherry pick
 ```
 git new-branch --upstream origin/dev release
