@@ -17,7 +17,7 @@ Before filing the merge request, please validate that your cl merges cleanly and
 git new-branch --upstream origin/dev merge_my_awesome
 git cherry-pick #HASH_FROM_MASTER_THAT_NEEDS_CHERRY_PICKING
 ```
-Build and run the tests. If it does not merge cleanly please supply a patch (do a cl in the current workspace and upload it to rietveld.
+Build and run the tests. If it does not merge cleanly please supply a patch by fixing merge conflicts locally and uploading a cl to rietveld by doing git cl upload, link to the review from the merge request.
 
 
 ## Pushing to dev
