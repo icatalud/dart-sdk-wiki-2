@@ -9,7 +9,7 @@ If your machine is already set up to build Chromium, then you should have all th
 
 Create a directory into which you want to checkout the Dart sources and change into that directory.
 
-Be sure to install the prereqs by following [Preparing Your Machine](PreparingYourMachine.md)
+Be sure to install the prereqs by following [Preparing Your Machine](Preparing-your-machine-to-build-the-Dart-SDK)
 
 One time setup:
 ```bash
@@ -32,8 +32,8 @@ gclient sync
 ```
 # Building
 
-For instructions on how to build and test, refer to [Building](Building.md)
+For instructions on how to build and test, refer to [Building](Building).
 
 # Landing changes
 
-Please see [Contributing](Contributing.md)
+Please see [Contributing](Contributing).
