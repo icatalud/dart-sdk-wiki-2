@@ -12,13 +12,15 @@ person. Please refrain from speculating about licenses or make assumptions about
 
 For DEPS pulled dependencies we have a few rules to follow.
 To make sure that we can continue to build older versions of the sdk even in the case of people deleting or rewriting history of dependent repositories, there are two options for using repositories not hosted under https://github.com/dart-lang/ or https://github.com/google/
-First option is to simply get the repo moved to the dart-lang org, or fork it there. This is normally not very nice since you get fragmented versions. If you do so, please state in the README that this is a for used for pulling as a DEPS, and don't publish conflicting versions to pub.
+First option is to simply get the repo moved to the dart-lang org, or fork it there. This is not very nice since you get fragmented versions. If you do so, please state in the README that this is used for  pulling as a DEPS, and don't publish conflicting versions to pub.
 
 Second option is to get the github repo mirrored on the chromium git servers, and pull the dependency from there. This is the same way we do normal dependencies from dart-lang (see below), with one exception:
 IMPORTANT: For security reasons we require all code that we pull in to build the sdk be reviewed by googlers no matter where it lives. This means that you need to do an initial review of all code up to and including the commit you put in the DEPS file for all external packages. If you roll the DEPS you need to do another review of the delta. You can upload the review to rietveld for easy reviewing and upstream any fixes before pulling the dependency.
 
 For dependencies on https://github.com/dart-lang/ the setup is less complicated, but we still need a mirror. Go ahead and add the dependency to the DEPS file, but please add the dependency directly on http://github.com/dart-lang/REPO.git, don't use the the github_mirror var. You can file a bug against chrome infra or ask ricow@ for help on the mirror. The mirrors go to https://chromium.googlesource.com/external/github.com/dart-lang/REPO.git
 We pull from the mirrors to have consistency between what devs see and what the bots see (and we do need the mirrors to not have 100+ bots constantly pull github)
+
+For non dart-lang github repos please get the mirror up before pulling.
 
 # Third-party binaries and binary data in general
 
