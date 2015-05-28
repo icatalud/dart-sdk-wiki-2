@@ -1,4 +1,4 @@
-We have a rather simple branch setup for the dart project. Normally, everything is developed on the master branch. Features that are not yet ready for prime time is hidden under a flag, and enabled when sufficient stability has been presented. We do occasionally create feature branches for landing big and disruptive changes. In addition to that, we have our dev and stable branches used for releasing the sdk.
+We have a rather simple branch setup for the dart project. Normally, everything is developed on the master branch. Features that are not yet ready for prime time are hidden under a flag, and enabled when sufficient stability has been proven. We occasionally create feature branches for landing big and disruptive changes. In addition to that, we have our dev and stable branches used for releasing the sdk.
 
 ## Release cycle
 Our normal release cycle is roughly 2 months long, but we don't make any guarantees, i.e., we may ship early if we feel that the stability is good or we may ship late if it is not. We don't normally follow a feature driven release cycle, but in some cases for larger changes to the language we may postpone a release to get all tools in sync.
@@ -12,7 +12,7 @@ Once we have something that looks good we merge it to stable and release it ther
 ## Getting your changes to dev channel during cherry pick season
 We batch up cherry picks and do pushes a number of times a week. If you have a cl that you think should make it to the current release, please file a bug at:
 https://code.google.com/p/dart/issues/entry?template=Merge%20request%20from%20developer
-Before filing the merge request, please validate that your cl merges cleanly and that relevant tests passes:
+Before filing the merge request, please validate that your cl merges cleanly and that relevant tests pass:
 ```
 git new-branch --upstream origin/dev merge_my_awesome
 git cherry-pick #HASH_FROM_MASTER_THAT_NEEDS_CHERRY_PICKING
@@ -30,7 +30,7 @@ Update tools/VERSION (for these full pushes reset PRERELEASE_PATCH to 0, increas
 ```
 git commit -a
 ```
-Update commit message, should read:
+Update the commit message, it should read like:
 ```
 Version $THE_VERSION_BEING_PUSHED
 
