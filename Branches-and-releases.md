@@ -79,3 +79,5 @@ Tag the new release:
 git tag -a $THE_VERSION_BEING_PUSHED -m $THE_VERSION_BEING_PUSHED
 git push --tags
 ```
+# Stable branch
+TO come, we did not branch for stable yet
