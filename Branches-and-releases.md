@@ -44,7 +44,7 @@ git push --tags
 ```
 
 ## Cherry picking to dev
-
+$THE_VERSION_BEING_PUSHED has the same meaning as above. The #HASH_1 ... #HASH_N are the cls we want to cherry pick
 ```
 git new-branch --upstream origin/dev release
 git cherry-pick #HASH_1
@@ -67,4 +67,15 @@ Cherry-pick #HASH_1 to dev
 .
 Cherry-pick #HASH_N to dev
 ```
+Sanity check the log, make sure all the cherry picks are there and that the Version commit has the right structure.
 
+Push the changes:
+```
+git push
+```
+
+Tag the new release:
+```
+git tag -a $THE_VERSION_BEING_PUSHED -m $THE_VERSION_BEING_PUSHED
+git push --tags
+```
