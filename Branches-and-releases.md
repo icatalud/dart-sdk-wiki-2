@@ -16,7 +16,7 @@ Update tools/VERSION (for these full pushes reset PRERELEASE_PATCH to 0, increas
 ```
 git commit -a
 ```
-# Update commit message, should read:
+Update commit message, should read:
 ```
 Version $THE_VERSION_BEING_PUSHED
 
