@@ -14,7 +14,7 @@ Follow the instructions in the [PreparingYourMachine](Preparing-your-machine-to-
 
 # Building
 
-Follow the steps in [GettingTheSource](GettingTheSource) to retrieve everything. You will end up with a tree that looks like this:
+Follow the steps in [GettingTheSource](Getting-The-Source) to retrieve everything. You will end up with a tree that looks like this:
 ```
 sdk/
   client/
