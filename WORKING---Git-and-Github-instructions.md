@@ -1,6 +1,11 @@
 *This document is a work in progress.*
 
 # Global aliases
+
+Add these to the `[alias]` section of your [Git global config].
+
+[Git global config]: https://git-scm.com/book/tr/v2/Customizing-Git-Git-Configuration
+
 ```
 [alias]
   pl = log --pretty=format:'%h %s' --graph
@@ -9,7 +14,7 @@
 
 # Cleanly merging in pull requests
 
-1. Set up the pr alias from above
+1. Set up the `pr` alias from above
 1. Start on the master branch. Make sure you've updated to latest.
 1. Let’s say we’re dealing with Pull Request #42
 1. Run `git pr 42`
