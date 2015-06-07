@@ -4,7 +4,7 @@ These instructions will let you build and run the Dart standalone VM for a Raspb
 
 # Build
 
-First, grab the Dart source as described in PreparingYourMachine and GettingTheSource. 
+First, grab the Dart source as described in [Preparing Your Machine](https://github.com/dart-lang/sdk/wiki/Preparing-your-machine-to-build-the-Dart-SDK) and [Getting The Source](https://github.com/dart-lang/sdk/wiki/Getting-The-Source). 
 
 ## Cross-compile
 
