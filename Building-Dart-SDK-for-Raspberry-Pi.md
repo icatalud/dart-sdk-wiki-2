@@ -48,7 +48,7 @@ Now, we're all set. Add `dart-sdk/bin` to your path and go to town!
   * Download a [Raspbian image](http://www.raspberrypi.org/downloads/).
   * Follow the instructions here [to run Raspberry Pi in qemu](http://xecdesign.com/qemu-emulating-raspberry-pi-the-easy-way/).
   * When you come to the step "First (proper) boot", append the flag "-redir tcp:2222::22" so that we can scp files to the guest OS.
-  * Follow instructions as above, replacing the IP address of the Raspberry Pi device with 127.0.0.1. You'll also need to specify the port 2222 with ssh ({{{-p 2222}}}) and scp ({{{-P 2222}}}).
+  * Follow instructions as above, replacing the IP address of the Raspberry Pi device with 127.0.0.1. You'll also need to specify the port 2222 with ssh (`-p 2222`) and scp (`-P 2222`).
 
 # Debian Package
 
