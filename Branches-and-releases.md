@@ -57,14 +57,21 @@ git push --tags
 ## Cherry picking to dev
 Please don't just cherry pick your changes to dev, we normally batch these up. Instead file a merge request (see above).
 
+We do this using two branches to get a nice looking history on the dev branch, and to not trigger builds with non working versions on the bots (the bot git poller will do git log --first-parent when figuring out commits.
+
 $THE_VERSION_BEING_PUSHED has the same meaning as above. The #HASH_1 ... #HASH_N are the cls we want to cherry pick
 ```
-git new-branch --upstream origin/dev release
+git new-branch --upstream origin/dev cherry
 git cherry-pick #HASH_1
 .
 .
 .
 git cherry-pick #HASH_N
+```
+Now, we have all the cherry picks on the cherry branch, create the branch we will use for pushing, merge the cherry picks in (to get a merge node similar to what we have for normal full pushes). We use --no-ff to get the merge node instead of fast forward commits.
+```
+git new-branch --upstream origin/dev dev
+git merge --no-ff --no-commit cherry
 ```
 Edit tools/VERSION, increase PRERELEASE_PATCH by 1
 ```
