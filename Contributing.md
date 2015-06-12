@@ -37,6 +37,18 @@ git commit
 ...
 ```
 
+## Keeping your branch updated with origin/master
+
+As you work, and before you send a patch for review, you should
+ensure your branch is merging cleanly to `origin/master`.
+
+There are multiple ways to do this, but we generally recommend
+running `git rebase-update`. This command will fetch
+origin/master, rebase all your open branches, and delete
+cleanly merged branches.
+
+Your local workflow may vary.
+
 ## Uploading the patch for review
 
 Upload the patch for review:
