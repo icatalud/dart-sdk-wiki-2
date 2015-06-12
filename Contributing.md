@@ -43,7 +43,15 @@ As you work, and before you send a patch for review, you should
 ensure your branch is merging cleanly to `origin/master`.
 
 There are multiple ways to do this, but we generally recommend
-running `git rebase-update`. This command will fetch
+running:
+
+```bash
+git rebase-update
+```
+
+Note: you can run this command from any branch.
+
+This command will fetch
 origin/master, rebase all your open branches, and delete
 cleanly merged branches.
 
