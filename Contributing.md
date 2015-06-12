@@ -26,6 +26,8 @@ To work with the Dart code, you need to download and build the development branc
 
 ## Starting a patch with git
 
+Note: you can be in any branch when you run `git new-branch`
+
 ```bash
 git new-branch <feature name>
 <write code>
