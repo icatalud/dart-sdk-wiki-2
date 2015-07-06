@@ -2,7 +2,7 @@ When doing a large change, or one that spans multiple components, it's useful to
 
 Meta-issues should all have the special "[meta](https://github.com/dart-lang/sdk/labels/meta)" label. Like other issues, they should be labeled "[Type-Enhancement](https://github.com/dart-lang/sdk/labels/Type-Enhancement)" if they're new features and "[Type-Defect](https://github.com/dart-lang/sdk/labels/Type-Defect)" if they're bugs. If a meta-issue is only relevant to a single project, it should have that project's "Area" label; if it spans multiple projects, it should be labelled "[Area-Multi](https://github.com/dart-lang/sdk/labels/Area-Multi)".
 
-The initial post of the meta-issue should include a high-level description of the issue followed by a checklist for all the sub-issues. Each entry should have a very brief description and a link to the sub-issue. A checklist can be created using the following Markdown:
+The initial post of the meta-issue should include a high-level description of the issue followed by a task list for all the sub-issues. Each entry should have a very brief description and a link to the sub-issue. A task list can be created using the following Markdown:
 
 ```markdown
 - [ ] item
