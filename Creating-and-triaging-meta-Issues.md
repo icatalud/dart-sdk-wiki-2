@@ -10,6 +10,8 @@ The initial post of the meta-issue should include a high-level description of th
 - [x] checked item
 ```
 
-Once a sub-issue is completed, its entry should be checked. If applicable, the first release to contain the fix should be mentioned as well. 
+Once a sub-issue is completed, its entry should be checked. If applicable, the first release to contain the fix should be mentioned as well.
+
+Occasionally new sub-issues come up; for example, a bug might be found in the solution to a previously-completed sub-issue. To add these to the meta-issue, a triager should both add a comment linking to the new sub-issue *and* add it to the task list. Adding a comment notifies interested parties of a new blocking issue, and updating the task list ensures that the original post continues to provide an up-to-date view of everything required for the meta-issue.
 
 See [this issue](https://github.com/dart-lang/sdk/issues/23454) for a good example of a meta-issue.
