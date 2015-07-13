@@ -1,7 +1,7 @@
 ##Workflow
 
 * Look through issues that don't have an area assigned.
-  * Use this [SDK triage link]
+  * Use the [SDK triage query]
 * Does the issue relate to code in the SDK?
   * Assign to the right area but adding a `Area-*` label.
 * Does the issue relate to code in another `dart-lang` project/package?
@@ -9,6 +9,6 @@
 * Get emails when issues are tagged with labels you care about
   * Use the [Dart SDK email tool].
 
-[SDK triage link]: https://dart-sdk-email.appspot.com/triage
+[SDK triage query]: https://dart-sdk-email.appspot.com/triage
 [GitHub Issue Mover]: https://github-issue-mover.appspot.com/
 [Dart SDK email tool]: https://dart-sdk-email.appspot.com/triage
