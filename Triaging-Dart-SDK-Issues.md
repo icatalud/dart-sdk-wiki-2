@@ -4,6 +4,8 @@
   * Use the [SDK triage query].
 * Does the issue relate to code in the SDK?
   * Assign to the right area by adding a `Area-*` label.
+* Is it obvious if the issue is a Defect or Enhancement?
+  * Optional: Add `Type-Defect` or `Type-Enhancement` if you can.
 * Does the issue relate to code in another `dart-lang` project/package?
   * Move the issue to the right repo by using the [GitHub Issue Mover][].
 * Get emails when issues are tagged with labels you care about
