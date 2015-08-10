@@ -1,5 +1,3 @@
-*This document is a work in progress.*
-
 # Global aliases
 
 Add these to the `[alias]` section of your [Git global config].
