@@ -11,8 +11,7 @@ Once we have something that looks good we merge it to stable and release it ther
 
 ## Getting your changes to dev channel during cherry pick season
 
-See [this page](https://github.com/dart-lang/sdk/wiki/Cherry-picks-to-dev-channel) with all the details.
-
+See [the cherry pick to dev page](https://github.com/dart-lang/sdk/wiki/Cherry-picks-to-dev-channel) for all the details on how to get a change cherry picked.
 
 ## Pushing to dev
 Find a suitable green build on master, by looking at the bots, we call this #MASTER_HASH_TO_BASE_RELEASE_OFF. We call the version we are pushing $THE_VERSION_BEING_PUSHED, this is based on the actual values in tools/VERSION, but looks like this "1.11.0-dev.3.0". 
