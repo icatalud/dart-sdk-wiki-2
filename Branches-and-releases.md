@@ -93,4 +93,32 @@ git tag -a $THE_VERSION_BEING_PUSHED -m $THE_VERSION_BEING_PUSHED
 git push --tags
 ```
 # Stable branch
-TO come, we did not branch for stable yet
+The way we handle stable releases is more or less equal to the way we handle dev. When we have a good dev channel build after 3 weeks of cherry-picking, we merge that over to the stable branch:
+
+## Doing a new full stable build
+Assume that the dev channel build we want to base this of is #DEV_HASH_TO_BASE_RELEASE_OFF
+```
+git new-branch --upstream origin/stable release
+git merge --no-commit #MASTER_HASH_TO_BASE_RELEASE_OFF
+```
+There may very well be merge conflicts if we did patch releases on stable in the prior release. Always just solve these by taking the dev version. Because of this, always do a sanity check:
+```
+git diff #DEV_HASH_TO_BASE_RELEASE_OFF
+```
+This should **only** give a difference in the version file. If not, checkout the file(s) from #DEV_HASH_TO_BASE_RELEASE_OFF.
+
+Update tools/VERSION (for these full pushes reset PRERELEASE_PATCH to 0, reset PRERELEASE to 0, reset PATCH to 0, set MINOR to the version from DEV (i.e., if we are doing this to release 1.12.0 set it to 12). As before, we call the version $THE_VERSION_BEING_PUSHED, on stable this is more simple, e.g., 1.12.0.
+
+```
+git push
+```
+Tag the new release:
+```
+git tag -a $THE_VERSION_BEING_PUSHED -m $THE_VERSION_BEING_PUSHED
+git push --tags
+```
+
+## Cherry picks to stable
+First of, before doing any patch releases on stable the commits should already have been on dev for a number of days without reported issues (preferably more than a week). Also, before releasing it, we need more manual validation and sanity checking. Please send out a mail internally requesting for feedback and ask the people responsible for the patches going in to validate functionality.
+
+We normally simply cherry pick the changes from master, and there is no difference in how we do this compared to dev channel, except, we don't increase PRERELEASE_PATCH, we increase PATCH in the tools/VERSION file.
