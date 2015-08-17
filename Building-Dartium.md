@@ -57,7 +57,7 @@ gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart git@gith
 },
 
 # Replace Blink with a git-svn checkout.
-git svn clone -rHEAD svn://svn.chromium.org/blink/branches/dart/dartium src/third_party/WebKit
+git svn clone -rHEAD svn://svn.chromium.org/blink/branches/dart/2171_3/dartium src/third_party/WebKit
 
 # Get latest version of all files
 gclient sync
@@ -82,7 +82,7 @@ gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart git@gith
 # Setup gclient to use svn:// for the chrome and blink repositories.
 # Edit your dartium-svn/.gclient to include:
 "custom_deps" : {
-    "src/third_party/WebKit": "svn://svn.chromium.org/blink/branches/dart/dartium",
+    "src/third_party/WebKit": "svn://svn.chromium.org/blink/branches/dart/2171_3/dartium",
 },
 
 # Checkout all the sub-projects.
