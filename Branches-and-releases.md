@@ -99,7 +99,7 @@ The way we handle stable releases is more or less equal to the way we handle dev
 Assume that the dev channel build we want to base this of is #DEV_HASH_TO_BASE_RELEASE_OFF
 ```
 git new-branch --upstream origin/stable release
-git merge --no-commit #MASTER_HASH_TO_BASE_RELEASE_OFF
+git merge --no-commit #DEV_HASH_TO_BASE_RELEASE_OFF
 ```
 There may very well be merge conflicts if we did patch releases on stable in the prior release. Always just solve these by taking the dev version. Because of this, always do a sanity check:
 ```
