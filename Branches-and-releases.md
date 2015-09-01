@@ -118,6 +118,8 @@ git tag -a $THE_VERSION_BEING_PUSHED -m $THE_VERSION_BEING_PUSHED
 git push --tags
 ```
 
+Finally, make sure everything on the [release checklist](https://github.com/dart-lang/sdk/wiki/Release-checklist) is completed.
+
 ## Cherry picks to stable
 First of, before doing any patch releases on stable the commits should already have been on dev for a number of days without reported issues (preferably more than a week). Also, before releasing it, we need more manual validation and sanity checking. Please send out a mail internally requesting for feedback and ask the people responsible for the patches going in to validate functionality.
 
