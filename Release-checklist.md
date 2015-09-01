@@ -1,3 +1,5 @@
+TODO: bucket into "before", "during", and "after" release.
+
 ## Stable releases
 
 For each full stable release, remember to:
