@@ -20,3 +20,7 @@ draft the following:
 3. G+
 
 When the release is out, publish the announcements and ask @googledev to reshare.
+
+### Book keeping
+
+1. Close milestone in github
