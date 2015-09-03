@@ -10,4 +10,5 @@ Dartdoc tool | [dart-lang/dartdoc](https://github.com/dart-lang/dartdoc/issues)
 test library | [dart-lang/test](https://github.com/dart-lang/test/issues)
 Polymer.Dart | [dart-lang/polymer-dart](https://github.com/dart-lang/polymer-dart/issues)
 Angular.Dart | [angular/angular.dart](https://github.com/angular/angular.dart/issues)
+Code labs (Avast Ye, Pirates... & Beware the Nest...) | [dart-lang/one-hour-codelab](https://github.com/dart-lang/one-hour-codelab/issues)
 
