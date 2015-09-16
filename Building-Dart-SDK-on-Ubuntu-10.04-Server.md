@@ -49,7 +49,7 @@ sudo update-alternatives --config g++
 gcc --version # should show 4.6
 ```
 
-[Get the source](https://github.com/dart-lang/sdk/wiki/GettingTheSource)
+[Get the source](https://github.com/dart-lang/sdk/wiki/Getting-The-Source)
 
 Build
 
