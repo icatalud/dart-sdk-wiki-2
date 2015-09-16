@@ -9,7 +9,9 @@ Before introducing any steps in the build process that depend on this SDK, file 
 ## Architectures
 
 On the linux OS, multiple processor architectures are supported by adding (stripped) binaries of the Dart executable for those architectures, with names like dart-mips and dart-arm, to tools/sdks/linux/dart-sdk/bin.  The default binary, called dart, is compiled for ia32, and is also used on x64 platforms.
-To use the downloaded SDK, the function CheckedInSdkFixedExecutable() in tools/utils.py must be called at least once, to copy the correct binary to 'dart'.  If this returns true, then the SDK is working, and CheckedInSdkExecutable() can be used to fetch the executable in subsequent code.  CheckedInPubPath() and CheckedInSdkPath() can also be used.
+To get the correct executable, the function CheckedInSdkExecutable() in tools/utils.py can be called.
+To check that there is a working executable for your platform, you can call CheckedInSdkCheckExecutable(), which returns true if the found executable is working.
+CheckedInSdkPath() is also available.
 
 ## Work in Progress
 
