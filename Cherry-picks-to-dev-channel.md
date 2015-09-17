@@ -18,4 +18,4 @@ Then, build and run the tests.
 If it does not merge cleanly please supply a patch by fixing merge conflicts locally and uploading a cl to rietveld by doing `git cl upload`, and link to the review in the merge request.
 
 ###Step 3
-Finally, please file a [merge request issue](https://goo.gl/3oLHMU).
+Finally, please file a [merge request issue](https://goo.gl/50nKLV).
