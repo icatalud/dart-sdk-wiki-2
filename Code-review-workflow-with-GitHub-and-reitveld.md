@@ -1,5 +1,3 @@
-# Code review workflow with GitHub and reitveld
-
 There are several ways to contribute code in github, for example
 
 1. forking and creating pull request from a forked repo (https://help.github.com/articles/fork-a-repo)
