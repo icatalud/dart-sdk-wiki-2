@@ -5,7 +5,7 @@ Dart is built using much of the same tools as Chromium, so the steps here are si
 
 # Linux
 
-Install the [Linux build prerequisites](http://code.google.com/p/chromium/wiki/LinuxBuildInstructionsPrerequisites). In particular you might need to install the 32-bit libraries on a 64-bit Linux system by following the [Automated Setup instructions](http://code.google.com/p/chromium/wiki/LinuxBuildInstructionsPrerequisites#Automated_Setup).
+Install the [Linux build prerequisites](https://chromium.googlesource.com/chromium/src/+/master/docs/linux_build_instructions_prerequisites.md). In particular you might need to install the 32-bit libraries on a 64-bit Linux system by following the [Automated Setup instructions](http://code.google.com/p/chromium/wiki/LinuxBuildInstructionsPrerequisites#Automated_Setup).
 
 If you run Ubuntu, you can try this script that should install all of the dependencies for you. This script is optional; you can always install all the build tools by hand.
 
