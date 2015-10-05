@@ -23,8 +23,4 @@ Use the macro ASAN_UNPOISON(ptr, len) to explicitly inform ASan about a region o
 
 ## Stack pointer ##
 
-When running with detect_stack_use_after_return=1, ASan will return a fake stack pointer when taking the address of a local variable. Use
-
-    uword sp = Isolate::GetCurrentStackPointer();
-
-to get the real stack pointer (calls a tiny pregenerated stub).
+When running with detect_stack_use_after_return=1, ASan will return a fake stack pointer when taking the address of a local variable. Use `Isolate::GetCurrentStackPointer()` to get the real stack pointer (calls a tiny pregenerated stub).
