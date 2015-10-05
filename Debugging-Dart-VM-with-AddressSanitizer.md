@@ -8,9 +8,9 @@ AddressSanitizer support requires building with Clang:
 
 # Running #
 
-Example command-line (currently detects some leaks, see https://github.com/dart-lang/sdk/issues/24467 )
+Example command-line (currently detects some leaks, see https://github.com/dart-lang/sdk/issues/24467 ):
 
     export ASAN_SYMBOLIZER_PATH=`pwd`/third_party/clang/linux/bin/llvm-symbolizer
     ASAN_OPTIONS=handle_segv=0:detect_leaks=1 out/DebugX64/dart foo.dart
 
-The handle_segv=0 is only crucial when running through the test suite, wherein several tests are expected to segfault, and will fail if AddressSanitizer 
+The handle_segv=0 is only crucial when running through the test suite, wherein several tests are expected to segfault, and will fail if AddressSanitizer installs its own segfault handler.
