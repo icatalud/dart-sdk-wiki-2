@@ -15,7 +15,7 @@ Example command-line (currently detects some leaks, see https://github.com/dart-
 
 The handle_segv=0 is only crucial when running through the test suite, wherein several tests are expected to segfault, and will fail if ASan installs its own segfault handler.
 
-# Developing #
+# Development #
 
 AddressSanitizer works at the C++ language level, hence does not automatically know about code that Dart VM's JIT compiler generates, nor about low-level direct manipulation of the stack from C++ code.
 
