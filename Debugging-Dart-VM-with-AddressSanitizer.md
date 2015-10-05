@@ -19,7 +19,7 @@ The handle_segv=0 is only crucial when running through the test suite, wherein s
 
 AddressSanitizer works at the C++ language level, hence does not automatically know about code that Dart VM's JIT compiler generates, nor about low-level direct manipulation of the stack from C++ code.
 
-Use the macro ASAN_UNPOISON(ptr, len) to explicitly inform ASan about a region of the stack that has been manipulated outside normal portable C++ code.
+Use the macro `ASAN_UNPOISON(ptr, len)` to explicitly inform ASan about a region of the stack that has been manipulated outside normal portable C++ code.
 
 ## Stack pointer ##
 
