@@ -23,10 +23,10 @@ For each full stable release, remember to:
 1 week before the final release, or approximately when we cut an RC0,
 draft the following:
 
-1. Email changelog to announce@dartlang.org
 1. Publish blog post
-2. Tweet
-3. G+
+1. Email changelog to announce@dartlang.org, and include a link to the blog post
+1. Tweet
+1. G+ post with link to blog post
 
 When the release is out, publish the announcements and ask @googledev to reshare.
 
