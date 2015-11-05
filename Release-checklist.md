@@ -1,6 +1,13 @@
 TODO: bucket into "before", "during", and "after" release.
 
-## Stable releases
+# Release Candidate
+
+For a release candidate leading up to a stable release, remember to:
+
+1. Post to Dart Announce ([1.13 sample](https://groups.google.com/a/dartlang.org/forum/#!topic/announce/_d8SpOQX6jE))
+1. Post to Dartlang Google+ ([1.12 sample](https://plus.sandbox.google.com/+dartlang/posts/g3c2T2Kw3A8))
+
+# Stable releases
 
 For each full stable release, remember to:
 
