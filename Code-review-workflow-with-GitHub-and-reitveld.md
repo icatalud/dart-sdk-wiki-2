@@ -4,8 +4,6 @@ There are several ways to contribute code in github, for example
 1. branching within the main repo, and doing pull requests from one branch to another.
 1. working on a local branch, creating a code review using rietveld, push directly into master (this article).
 
-We use the last two approaches. This article shows step by step instructions for the last approach. [Another article](https://github.com/dart-lang/HOWTO-workflows/wiki/Code-Reviews-for-github) illustrates how to use the second approach.
-
 ## Step 1: Clone the project
 
     > mkdir components
