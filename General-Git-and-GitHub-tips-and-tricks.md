@@ -1,4 +1,7 @@
 # Handy global aliases
+
+*TODO: kevmoo to add details*
+
 ```
 [alias]
   pr = "!f() { git fetch origin refs/pull/$1/head:pr/$1; } ; f"
