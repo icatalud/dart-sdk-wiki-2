@@ -31,7 +31,7 @@ test
 WebPlatformTest/html/semantics/tabular-data/the-table-element/insertRow-method\_t01.dart
 contains the following Dart code:
 
-```
+```dart
 const String htmlEL = r'''
 <div id="test">
 <table>
@@ -85,7 +85,7 @@ The annotation is a JSON dictionary, embedded between two delimiters,
 and it can be put inside an HTML comment so that the unprocessed page
 looks like valid HTML:
 
-```
+```html
 <!--
 START_HTML_DART_TEST
 {
@@ -100,8 +100,8 @@ The test will pass if the web page posts all the strings in the
 expectedMessages property to its top-level window, for example by
 executing lines like
 
-```
-  window.postMessage('squid', '*');
+```javascript
+window.postMessage('squid', '*');
 ```
 
 Scripts in the 'scripts' property of the annotation will be
@@ -109,14 +109,17 @@ automatically copied from the test directory to the generated-test
 directory, and compiled from dart to js if necessary.  The script tags
 using Dart scripts should be written exactly like
 
-```
-  <script src="foo.dart" type="application/dart"></script>
+```html
+<script src="foo.dart" type="application/dart"></script>
 ```
 in order for the test generation to find and modify them.
 
 In order for the test framework to catch all errors in this HTML test,
-the first script that executes on this page must be: ```
-<script>window.parent.dispatchEvent(new
-Event('detect_errors'));</script> ``` This allows the test framework
+the first script that executes on this page must be:
+
+```html
+<script>window.parent.dispatchEvent(new Event('detect_errors'));</script>
+```
+ This allows the test framework
 to attach an error handler to the window at the first opportunity,
 before the scripts being tested have run.
