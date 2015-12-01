@@ -4,9 +4,9 @@
 
 Some Linux distros (like Ubuntu 10.04) require special instructions.
 TODO(move the below wikis)
-  * [Building Dart for Ubuntu 10.04](https://code.google.com/p/dart/wiki/BuildDartSDKOnUbuntu10_04)
-  * [Building Dart for Debian](https://code.google.com/p/dart/wiki/BuildingOnDebian)
-  * [Building Dart for CentOS, RedHat, Fedora and Amazon Linux AMI](https://code.google.com/p/dart/wiki/BuildingOnCentOS)
+  * [Building Dart for Ubuntu 10.04](https://github.com/dart-lang/sdk/wiki/BuildDartSDKOnUbuntu10_04)
+  * [Building Dart for Debian](https://github.com/dart-lang/sdk/wiki/BuildingOnDebian)
+  * [Building Dart for CentOS, RedHat, Fedora and Amazon Linux AMI](https://github.com/dart-lang/sdk/wiki/BuildingOnCentOS)
 
 # Configuring your machine
 
