@@ -36,5 +36,6 @@ When the release is out, publish the announcements and ask @googledev to reshare
 
 For each stable patch release -- e.g. 1.12.0 to 1.12.1 -- remember to:
 
-1. Post an email to Dart Annoucements (announce@dartlang.org)
+1. Prior to creating the final build, update [CHANGELOG.md](https://github.com/dart-lang/sdk/blob/master/CHANGELOG.md) to mention the fixes (see 1.13.1 and 1.13.2 for examples)
+1. Post an email to Dart Announcements ([announce@dartlang.org](https://groups.google.com/a/dartlang.org/forum/#!forum/announce))
 
