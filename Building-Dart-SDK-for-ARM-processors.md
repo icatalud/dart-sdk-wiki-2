@@ -6,14 +6,14 @@ The Dart VM runs on a variety of ARM processors on Linux and Android. This docum
 
 ## Linux
 
-If you are building natively on the device you will be running on, you can skip this step. If you are running Ubuntu, you can obtain a cross-compiler by doing the following:
+If you are building natively on the device you will be running on, you can skip this step.
+
+If you are running Ubuntu, you can obtain a cross-compiler by doing the following:
 
 ```
-$ wget http://src.chromium.org/svn/trunk/src/build/install-build-deps.sh
-$ ./install-build-deps.sh --no-chromeos-fonts --arm
+$ sudo apt-get install g++-arm-linux-gnueabihf  # For 32-bit ARM (ARMv7)
+$ sudo apt-get install g++-aarch64-linux-gnu    # For 64-bit ARM
 ```
-
-If you have already run the script, but without --arm, simply rerun with the --arm option.
 
 If you are using a different Linux distribution, follow the instructions for your distribution for obtaining an ARM cross-compiler.
 
@@ -31,7 +31,7 @@ On Ubuntu, after installing the default arm cross-compiler, simply do:
 $ ./tools/build.py -m release -a arm runtime
 ```
 
-You can also produce a Dart SDK by replacing runtime with create_sdk. This process involves also building a VM that targets ia32, which is used to generate a few parts of the SDK.
+You can also produce a Dart SDK by replacing `runtime` with `create_sdk`. This process involves also building a VM that targets ia32, which is used to generate a few parts of the SDK.
 
 You can use a different toolchain using the -t switch. For example, if the path to your gcc is /path/to/toolchain/prefix-gcc, then you'd invoke the build script with:
 
@@ -46,8 +46,6 @@ If you have an arm64 toolchain, you can also build a Dart VM supporting arm64 pr
 ```
 $ ./tools/build.py -m release -a arm64 -t /path/to/arm64/toolchain/prefix runtime
 ```
-
-As of yet, the build script does not go looking for any default arm64 cross-compiler.
 
 ## Android
 
