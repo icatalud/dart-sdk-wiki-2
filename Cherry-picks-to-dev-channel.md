@@ -4,6 +4,11 @@ We batch up cherry picks and do pushes a number of times a week. For details, se
 
 If you have a cl that you think should make it to the current release, follow these steps.
 
+Generally cherry picks should be limited to the following categories:
+
+1. Bugs that have introduced regressions from the last stable release
+2. Critical bugs in new features introduced in the current release
+
 ###Step 1
 First, please validate that your cl merges cleanly and that relevant tests pass:
 
