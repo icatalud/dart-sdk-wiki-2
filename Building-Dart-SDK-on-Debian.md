@@ -20,7 +20,7 @@ $ sudo apt-get -y install openjdk-6-jdk
 The depot_tools from the Chromium project are required for checking out the source.
 
 ```
-$ svn co http://src.chromium.org/svn/trunk/tools/depot_tools
+$ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 $ export PATH=$PATH:`pwd`/depot_tools
 ```
 
