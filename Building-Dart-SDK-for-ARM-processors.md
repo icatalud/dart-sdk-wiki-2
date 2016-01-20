@@ -1,6 +1,6 @@
 # Introduction
 
-The Dart VM runs on a variety of ARM processors on Linux and Android. This document explains how to build the Dart VM to target these platforms. More detailed, platform specific information can be found under Android, AndroidContentShell, and RaspberryPi.
+The Dart VM runs on a variety of ARM processors on Linux and Android. This document explains how to build the Dart VM to target these platforms. More detailed platform-specific information can be found under [Android](https://github.com/dart-lang/sdk/wiki/Building-Dart-SDK-for-Android) and [Raspberry Pi](https://github.com/dart-lang/sdk/wiki/Building-Dart-SDK-for-Raspberry-Pi).
 
 # Getting a Cross-compiler
 
