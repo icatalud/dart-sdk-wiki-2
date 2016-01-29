@@ -15,6 +15,7 @@ For each full stable release, remember to:
 
 ### Ecosystem
 1. Alert maintainers of Chocolately (Windows package) by emailing daftspaniel@gmail.com
+1. Validate that mac homebrew has been updated.
 
 ### Announcing
 
