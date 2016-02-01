@@ -4,6 +4,8 @@
   * Use the [SDK triage query].
 * Does the issue relate to code in the SDK?
   * Assign to the right area by adding a `Area-*` label.
+* Is the issue in `Area-Library`?
+  * Assign the right `Library-*` label, too.
 * Is it obvious if the issue is a Defect or Enhancement?
   * Optional: Add `Type-Defect` or `Type-Enhancement` if you can.
 * Does the issue relate to code in another `dart-lang` project/package?
