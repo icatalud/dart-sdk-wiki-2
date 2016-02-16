@@ -29,13 +29,9 @@ gclient runhooks
 ```
 
 ## Checkout for committers
-A Chromium / Dartium checkout pulls code from ~90 repositories into a single directory hierarchy. We do not need to modify the vast majority of these. Dartium development typically requires commit access to 3 repositories: the Chromium repository (src), the Blink repository (src/third_party/WebKit?), and the Dart repository (src/dart).
+A Chromium / Dartium checkout pulls code from ~90 repositories into a single directory hierarchy. We do not need to modify the vast majority of these. Dartium development typically requires commit access to 3 repositories: the Chromium repository (src), the Blink repository (src/third_party/WebKit), and the Dart repository (src/dart).
 
-For Chromium and Blink, we work off of Dart-specific branches that we maintain. These are branched off of beta branches of chromium.
-
-You can use either subversion or git (or a mix if you prefer) to work in Blink and Dart repositories. We provide instructions for both below.
-
-If you are merging Dartium to a new beta branch, we recommend git.
+For Chromium and Blink, we work off of Dart-specific branches that we maintain. These are branched off of beta branches of chromium.  They are stored in git repositories at https://chromium.googlesource.com/dart/dartium/src and https://chromium.googlesource.com/dart/dartium/blink.
 
 ### Using Git
 ```bash
@@ -50,42 +46,7 @@ mkdir dartium-git
 cd dartium-git
 gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart git@github.com:dart-lang/sdk.git
 
-# Hide the git-svn repository from gclient.
-# Edit your dartium-git/.gclient to include:
-"custom_deps" : {
-     "src/third_party/WebKit" : None,
-},
-
-# Replace Blink with a git-svn checkout.
-git svn clone -rHEAD svn://svn.chromium.org/blink/branches/dart/2171_3/dartium src/third_party/WebKit
-
 # Get latest version of all files
-gclient sync
-
-# Generate the build files for the current OS. (This is usually, but not always, run as part of gclient sync.)
-gclient runhooks
-```
-
-### Using Subversion (not recommended)
-```bash
-# Check that we can authenticate with the Blink Subversion server. Use your password from https://chromium-access.appspot.com/
-svn ls svn://svn.chromium.org/blink
-
-# Check that we can authenticate with GitHub for the Dart SDK. Set up ssh keys with Github if this fails.
-git ls-remote git@github.com:dart-lang/sdk.git
-
-# Create a directory and get the .gclient file.
-mkdir dartium-svn
-cd dartium-svn
-gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart git@github.com:dart-lang/sdk.git
-
-# Setup gclient to use svn:// for the chrome and blink repositories.
-# Edit your dartium-svn/.gclient to include:
-"custom_deps" : {
-    "src/third_party/WebKit": "svn://svn.chromium.org/blink/branches/dart/2171_3/dartium",
-},
-
-# Checkout all the sub-projects.
 gclient sync
 
 # Generate the build files for the current OS. (This is usually, but not always, run as part of gclient sync.)
@@ -109,16 +70,10 @@ If your build fails, you may need to install dependencies such as libspeechd-dev
 ```
 cd src
 ```
-If you are using git, you need to separately update each git directory:
+You need to update the repository containing the DEPS file explicitly:
 
 ```
-git pull --rebase
 pushd dart; git pull --rebase; popd
-pushd third_party/WebKit; git cl rebase; popd
-```
-
-Finally, for either svn or git:
-```
 gclient sync
 gclient runhooks
 ```
