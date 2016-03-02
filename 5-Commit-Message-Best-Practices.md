@@ -1,6 +1,6 @@
 1. First line is a capitalized, short (50 chars or less) summary
 
-1. **Always** add a blank line before more information. Many git tools assume layout.
+1. **Always** add a blank line before more information. Many git tools assume this layout.
 
 1. More detailed explanatory text, if necessary. Wrap it to about 72 characters or so.
 
