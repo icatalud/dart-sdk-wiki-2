@@ -13,7 +13,9 @@
 * Get emails when issues are tagged with labels you care about
   * Use the [Dart SDK email tool].
 
-## Priority
+## Issue Labels
+
+### Priority
 * Level of **team urgency**
   * Should be the opinion of team and/or product management
   * Can be affected by the quantity/priority of existing issues - *If everything is P0, nothing is P0*
@@ -34,7 +36,7 @@ Should be done – eventually
 		* Milestone flag should be changed to release X+1 or
 		* P1 issues can be changed to P2/3 and milestone flag removed
 
-## Severity
+### Severity
 * Level of **customer pain**
 	* Should be the opinion of the customer and/or product management, not necessarily the team it's assigned to.
 	* Not affected by the quantity/severity of existing issues.
