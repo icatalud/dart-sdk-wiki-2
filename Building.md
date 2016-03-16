@@ -1,61 +1,80 @@
-# How to Build and Test the Dart Project
+# Dependencies
 
-# Building for various Linux distros
+## Linux
 
-Some Linux distros (like Ubuntu 10.04) require special instructions.
-TODO(move the below wikis)
-  * [Building Dart for Ubuntu 10.04](https://github.com/dart-lang/sdk/wiki/Building-Dart-SDK-on-Ubuntu-10.04-Server)
-  * [Building Dart for Debian](https://github.com/dart-lang/sdk/wiki/Building-Dart-SDK-on-Debian)
-  * [Building Dart for CentOS, RedHat, Fedora and Amazon Linux AMI](https://github.com/dart-lang/sdk/wiki/Building-Dart-on-CentOS,-Red-Hat,-Fedora-and-Amazon-Linux-AMI)
+Install build tools:
 
-# Configuring your machine
+```bash
+sudo apt-get install g++ git make python
+sudo apt-get install g++-multilib  # If you want to build 32-bit binaries on a 64-bit host.
+```
 
-Follow the instructions in the [PreparingYourMachine](Preparing-your-machine-to-build-the-Dart-SDK) page.
+Install Chromium's [depot tools](http://dev.chromium.org/developers/how-tos/install-depot-tools):
+
+```bash
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+export PATH="$PATH:$PWD/depot_tools"
+```
+
+## Mac OS X
+
+Install XCode.
+
+Install Chromium's [depot tools](http://dev.chromium.org/developers/how-tos/install-depot-tools):
+```bash
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+export PATH="$PATH:$PWD/depot_tools"
+```
+
+## Windows
+
+Install VisualStudio.
+
+Install Chromium's [depot tools](http://dev.chromium.org/developers/how-tos/install-depot-tools).
+
+# Getting the source
+
+```bash
+mkdir dart-sdk
+cd dart-sdk
+gclient config https://github.com/dart-lang/sdk.git
+gclient sync
+```
+
+Or if you have [ssh keys setup for GitHub](https://help.github.com/articles/generating-an-ssh-key/) (recommended for committers):
+
+```bash
+mkdir dart-sdk
+cd dart-sdk
+gclient config git@github.com:dart-lang/sdk.git
+gclient sync
+```
+
 
 # Building
 
-Follow the steps in [GettingTheSource](Getting-The-Source) to retrieve everything. You will end up with a tree that looks like this:
-```
-sdk/
-  client/
-  pkg/
-  runtime/
-  tools/
-  ...
-```
-
-## Building everything
-
-From the `sdk` directory use the `build.py` script under `tools/`:
-```bash
-$ cd sdk
-$ ./tools/build.py -m release --arch=ia32
-```
-
-For 64 bit:
+Build the 64-bit SDK:
 
 ```bash
-$ cd sdk
-$ ./tools/build.py -m release -a x64
+cd dart-sdk/sdk
+./tools/build.py --mode release --arch x64 create_sdk
 ```
 
-## Building just the SDK
+The output will be in `out/ReleaseX64/dart_sdk`, `xcodebuild/ReleaseX64/dart_sdk`, or `build/ReleaseX64/dart_sdk` on Linux, Mac or Windows respectively.
+
+Build the 32-bit SDK:
 
 ```bash
-$ cd sdk
-$ ./tools/build.py -m release create_sdk
+cd dart-sdk/sdk
+./tools/build.py --mode release --arch ia32 create_sdk
 ```
+The output will be in `out/ReleaseIA32/dart_sdk`, `xcodebuild/ReleaseIA32/dart_sdk`, or `build/ReleaseIA32/dart_sdk` on Linux, Mac or Windows respectively.
 
-You can also build the SDK for a specific architecture:
-
-```bash
-$ cd sdk
-$ ./tools/build.py -m release -a x64 create_sdk
-```
+See also [building for ARM](https://github.com/dart-lang/sdk/wiki/Building-Dart-SDK-for-ARM-processors).
 
 ## Tips
 
-By default the build and test scripts select the debug binaries. You can build and test the release version of the VM by specifying `--mode=release` or both debug and release by specifying `--mode=all` on the respective `build.py` and `test.py` command lines.  This can be shortened to `-mrelease` or `-m release`, and the architecture can be specified with `--arch=x64` or `-a ia32`, the default.  Other architectures, like 'arm' and 'mips', are also supported.
+By default the build and test scripts select the debug binaries. You can build and test the release version of the VM by specifying `--mode=release` or both debug and release by specifying `--mode=all` on the respective `build.py` and `test.py` command lines.  This can be shortened to `-mrelease` or `-m release`, and the architecture can be specified with `--arch=ia32` or `-a x64`, the default.  Other architectures, like `arm`, `arm64`, and `mips`, are also supported.
 
 We recommend that you use a local file system at least for the output of the builds. The output directory is `out` on linux, `xcodebuild` on Mac OS, and `build` on Windows.  If your code is in some NFS partition, you can link the `out` directory to a local directory:
 ```bash
@@ -74,16 +93,16 @@ A notification is a small transient non-modal window, for now, only supported on
 
 After doing a "gclient sync", clang can be used for compiling the runtime with
 ```bash
-$ cd sdk
-dart $ rm -r out
-dart $ export CC=third_party/clang/linux/bin/clang
-dart $ export CC_host=third_party/clang/linux/bin/clang
-dart $ export CXX=third_party/clang/linux/bin/clang++
-dart $ export CXX_host=third_party/clang/linux/bin/clang++
-dart $ export C_INCLUDE_PATH=third_party/clang/linux/lib/clang/3.4/include/
-dart $ export CPLUS_INCLUDE_PATH=third_party/clang/linux/lib/clang/3.4/include/
-dart $ gclient runhooks
-dart $ ./tools/build.py -mrelease -a all runtime
+cd sdk
+rm -r out
+export CC=third_party/clang/linux/bin/clang
+export CC_host=third_party/clang/linux/bin/clang
+export CXX=third_party/clang/linux/bin/clang++
+export CXX_host=third_party/clang/linux/bin/clang++
+export C_INCLUDE_PATH=third_party/clang/linux/lib/clang/3.4/include/
+export CPLUS_INCLUDE_PATH=third_party/clang/linux/lib/clang/3.4/include/
+gclient runhooks
+./tools/build.py -m release -a all runtime
 ```
 
 ## Special note for Windows users using Visual Studio Express:
