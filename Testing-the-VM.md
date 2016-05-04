@@ -41,7 +41,7 @@ gclient runhooks
 ## Precompilation
 
 ```
-./tools/build.py -mrelease runtime
+./tools/build.py -mrelease runtime_precompiled
 ./tools/test.py -mrelease -cprecompiler -rdart_precompiled
 ```
 
