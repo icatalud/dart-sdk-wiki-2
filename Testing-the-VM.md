@@ -34,7 +34,7 @@ gclient runhooks
 ## Noopt
 
 ```
-./tools/build.py -mdebug,release runtime
+./tools/build.py -mdebug,release runtime_and_noopt
 ./tools/test.py -mdebug,release --noopt
 ```
 
