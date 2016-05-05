@@ -45,6 +45,13 @@ gclient runhooks
 ./tools/test.py -mrelease -cprecompiler -rdart_precompiled
 ```
 
+## Precompilation on Android devices
+```
+./tools/build.py -mrelease -aarm --os=android runtime_precompiled
+export PATH=$PATH:$PWD/third_party/android_tools/sdk/platform-tools
+./tools/test.py -mrelease -aarm --system=android -cprecompiler -rdart_precompiled --use-blobs
+```
+
 ## App snapshots
 
 ```
