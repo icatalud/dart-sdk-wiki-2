@@ -1,9 +1,9 @@
 ## JIT
 
 ```
-./tools/build.py -mdebug,release runtime
-./tools/test.py -mdebug,release
-./tools/test.py -mdebug,release --checked
+./tools/build.py -m all runtime
+./tools/test.py -m all
+./tools/test.py -m all --checked
 ```
 
 ## [AddressSanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer)
@@ -15,8 +15,8 @@ export C_INCLUDE_PATH="third_party/clang/linux/lib/clang/3.4/include/"
 export CPLUS_INCLUDE_PATH="third_party/clang/linux/lib/clang/3.4/include/"
 export ASAN_OPTIONS="handle_segv=0:detect_stack_use_after_return=1"
 gclient runhooks
-./tools/build.py -mrelease runtime
-./tools/test.py -mrelease
+./tools/build.py -m release runtime
+./tools/test.py -m release
 ```
 
 ## [ThreadSanitizer](https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual)
@@ -27,8 +27,8 @@ export CXX="third_party/clang/linux/bin/clang++ -fsanitize=thread"
 export C_INCLUDE_PATH="third_party/clang/linux/lib/clang/3.4/include/"
 export CPLUS_INCLUDE_PATH="third_party/clang/linux/lib/clang/3.4/include/"
 gclient runhooks
-./tools/build.py -mrelease runtime
-./tools/test.py -mrelease
+./tools/build.py -m release runtime
+./tools/test.py -m release
 ```
 
 ## Noopt
@@ -55,6 +55,6 @@ export PATH=$PATH:$PWD/third_party/android_tools/sdk/platform-tools
 ## App snapshots
 
 ```
-./tools/build.py -mproduct runtime
-./tools/test.py -mproduct -cdart2app -rdart_product
+./tools/build.py -mall runtime
+./tools/test.py -mall -cdart2app -rdart_product
 ```
