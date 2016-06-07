@@ -26,8 +26,8 @@
         * For release channel: worthy of a "dot" release
 	* **P1 High**: Planned for the in-progress release
 	    * Should be aligned with other work to ensure likely completion in current release
-  * **P2 Medium**: Important work for later release
-Should be done – eventually
+  * **P2 Medium**: Important work for later release.
+      * Should be done – eventually.
   * **P3 Low**: Maybe, someday
     * First candidates to close as "wont fix, not planned, etc"
 * When we enter cherry pick season for release X...
