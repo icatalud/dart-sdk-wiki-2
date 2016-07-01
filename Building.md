@@ -143,7 +143,7 @@ $ ./tools/test.py -mrelease --arch=ia32 --runtime=vm corelib/ListTest
 
 Make sure to run tests using the release VM if you have built the release VM, and for the same architecture as you have built.
 
-See also TestingDart2js for dart2js specific examples.
+See also [Testing Dart2js](https://github.com/dart-lang/sdk/wiki/Testing-Dart2js) for dart2js specific examples.
 
 ## Complex examples
 
