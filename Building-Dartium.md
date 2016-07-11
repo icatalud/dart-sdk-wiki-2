@@ -15,8 +15,8 @@ The following instructions will create a new checkout containing a Dart-enabled 
 
 ```bash
 # Create a directory to work in.
-mkdir dartium-svn
-cd dartium-svn
+mkdir dartium
+cd dartium
 
 # Create a .gclient file.
 gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart https://github.com/dart-lang/sdk.git
@@ -35,15 +35,12 @@ For Chromium and Blink, we work off of Dart-specific branches that we maintain. 
 
 ### Using Git
 ```bash
-# Check that we can authenticate with the Blink Subversion server. Use your password from https://chromium-access.appspot.com/
-svn ls svn://svn.chromium.org/blink
-
 # Check that we can authenticate with GitHub for the Dart SDK. Set up ssh keys with Github if this fails.
 git ls-remote git@github.com:dart-lang/sdk.git
 
-# Create directory for your checkout.
-mkdir dartium-git
-cd dartium-git
+# Follow the steps above for non-committers, but use a git URL instead of an HTTPS URL to check out
+mkdir dartium
+cd dartium
 gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart git@github.com:dart-lang/sdk.git
 
 # Get latest version of all files
