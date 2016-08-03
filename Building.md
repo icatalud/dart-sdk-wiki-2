@@ -1,5 +1,10 @@
 # Dependencies
 
+## C++11
+
+Dart uses some new C++ features from C++11 (previously called C++0x).  Compilers that support these features
+are GCC version 4.8 (4.6 is known not to work) and Microsoft Visual Studio 2015 (available in a free community edition for many users).  The clang compiler for linux, included in the Dart distribution, and the compilers used by Xcode on macOS (previously called OS X) are also known to work.
+
 ## Linux
 
 Install build tools:
@@ -105,19 +110,18 @@ gclient runhooks
 ./tools/build.py -m release -a all runtime
 ```
 
-## Special note for Windows users using Visual Studio Express:
-Your Visual Studio executable command has a different name from the standard Visual Studio installations. You can specify the name for that executable by passing the additional flag "--executable=$VS\_EXECUTABLE\_NAME" to build.py. The executable name will probably be something like "VSExpress.exe".
+## Special note for Windows users using Visual Studio Community Edition:
+Your Visual Studio executable command may have a different name from the standard Visual Studio installations. You can specify the name for that executable by passing the additional flag "--executable=$VS\_EXECUTABLE\_NAME" to build.py. The executable name will probably be something like "VSExpress.exe".
 
-## Building on Windows with Visual Studio 2012 or 2013
-Before you do "gclient runhooks" set environment variable gyp\_msvs\_version to 2012 or to 2013 depending on version of Visual Studio you are using.
+## Building on Windows with Visual Studio 2015
+Gyp should autodetect the version of Visual Studio you have, and produce solution files in the correct format.
+If this is not happening, then set environment variable gyp\_msvs\_version to 2015.
 
-For example, this will produce Visual Studio 2013-compliant solution files:
+For example, this will produce Visual Studio 2015-compliant solution files:
 ```bash
-set gyp_msvs_version=2013
+set gyp_msvs_version=2015
 gclient runhooks
 ```
-
-By default(when gyp\_msvs\_version environment variable is not defined) generated .sln-file is created in Visual Studio 2010 format.
 
 # Testing
 
