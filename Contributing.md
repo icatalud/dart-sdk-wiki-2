@@ -92,7 +92,7 @@ git cl land -c "Jane Dev <jane_dev@example.com>"
 
 The source code of Dart follows the:
 
-  * [Google C++ style guide](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml)
+  * [Google C++ style guide](https://google.github.io/styleguide/cppguide.html)
   * [Dart style guide](https://www.dartlang.org/articles/style-guide/)
 
 You should familiarize yourself with those guidelines.
