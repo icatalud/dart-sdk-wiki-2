@@ -3,6 +3,7 @@
 AddressSanitizer (ASan) support requires building with Clang:
 
     export CXX="third_party/clang/linux/bin/clang++ -fsanitize=address -fPIC"
+    export GYP_DEFINES="asan=1"
     gclient runhooks
     ./tools/build.py -m debug -a x64 runtime
 
