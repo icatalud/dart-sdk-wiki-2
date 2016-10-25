@@ -92,7 +92,7 @@ or
 
 `$ adb -s emulator-name emu kill    ← if there is more than one emulator running`
 
-Running the Dart VM on an Android device
+## Running the Dart VM on an Android device ##
 
 First, make sure that the "USB Debugging" mode is enabled by navigating to Settings > Developer options > USB debugging. The box should be checked. You may need to have root on the device.
 
