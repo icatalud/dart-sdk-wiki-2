@@ -50,6 +50,10 @@ GYP_MSVS_OVERRIDE_PATH=C:\Program Files (x86)\Microsoft Visual Studio 14.0
 
 or wherever your Visual Studio install lives. Then do `gclient sync` and proceed as above.
 
+## Other Configurations
+
+The script in `tools/gn.py` can be used to build the VM in a number of different configurations, or with different cross-compilers and sysroots. For example `--asan` can be passed to build with ASAN on configurations that use Clang, `--no-clang` can be passed to use `gcc` instead of Clang on Linux, and so forth. See the script's help message for details.
+
 # Using GN
 
 GN has an extensive online help system, which can be accessed by running `gn help`. Also take note of the [full documentation](https://chromium.googlesource.com/chromium/src/+/master/tools/gn/docs/), and [style guide](https://chromium.googlesource.com/chromium/src/+/master/tools/gn/docs/style_guide.md).
