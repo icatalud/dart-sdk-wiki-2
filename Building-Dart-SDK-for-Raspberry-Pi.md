@@ -2,10 +2,6 @@
 
 These instructions will let you build and run the Dart standalone VM for a Raspberry Pi device running the Raspbian distribution of Linux. For now, this process will likely only work on a Linux machine.
 
-# Build
-
-First, grab the Dart source as described in [Preparing Your Machine](https://github.com/dart-lang/sdk/wiki/Preparing-your-machine-to-build-the-Dart-SDK) and [Getting The Source](https://github.com/dart-lang/sdk/wiki/Getting-The-Source). 
-
 ## Cross-compile
 
 This build will require a cross-compiler that you can obtain by cloning [this repository](https://github.com/raspberrypi/tools).
