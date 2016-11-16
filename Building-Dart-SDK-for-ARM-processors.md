@@ -19,7 +19,7 @@ If you are using a different Linux distribution, follow the instructions for you
 
 ## Android
 
-Follow instructions under [Getting The Source](https://github.com/dart-lang/sdk/wiki/Getting-The-Source), and under "One-time Setup" under Android
+Follow instructions under "One-time Setup" under Android
 
 # Building
 
