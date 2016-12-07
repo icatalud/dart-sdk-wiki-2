@@ -2,6 +2,11 @@
 
 ## How to test changes on pkg/kernel:
 
+Run dartanalyzer in strong mode:
+```
+(cd pkg/kernel && dartanalyzer --strong bin lib test)
+```
+
 Run unit tests of kernel, front_end, and dart2js that are directly affected:
 ```
 tools/test.py pkg/kernel -mrelease --checked
