@@ -56,12 +56,5 @@ export PATH=$PATH:$PWD/third_party/android_tools/sdk/platform-tools
 
 ```
 ./tools/build.py -mall runtime
-./tools/test.py -mall -cdart2app -rdart_app
-```
-
-## App snapshots with unoptimized code
-
-```
-./tools/build.py -mall runtime
-./tools/test.py -mall -cdart2appjit -rdart_app --use-blobs
+./tools/test.py -mall -capp_jit
 ```
