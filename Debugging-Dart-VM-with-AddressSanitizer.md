@@ -1,11 +1,9 @@
 # Building #
 
-AddressSanitizer (ASan) support requires building with Clang:
+AddressSanitizer (ASan) support requires compiling with additional flags. Run gn.py with --asan to set them:
 
-    export CXX="third_party/clang/linux/bin/clang++ -fsanitize=address -fPIC"
-    export GYP_DEFINES="asan=1"
-    gclient runhooks
-    ./tools/build.py -m debug -a x64 runtime
+    ./tools/gn.py -m release --asan
+    ./tools/build.py -m release runtime
 
 # Running #
 
