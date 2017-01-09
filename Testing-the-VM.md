@@ -10,6 +10,7 @@
 
 ```
 export ASAN_OPTIONS="handle_segv=0:detect_stack_use_after_return=1"
+export ASAN_SYMBOLIZER_PATH=`pwd`/third_party/clang/linux/bin/llvm-symbolizer
 ./tools/gn.py -m release --asan
 ./tools/build.py -m release runtime
 ./tools/test.py -m release --builder-tag=asan
