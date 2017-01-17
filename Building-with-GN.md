@@ -9,22 +9,7 @@ This page describes how to build the Dart SDK using GN and Ninja.
 
 ## Linux, Mac
 
-Set the environment variable `DART_USE_GN=1`, then proceed as usual, e.g.:
-
-```
-$ export DART_USE_GN=1
-$ gclient runhooks
-$ ./tools/build.py -m debug,release -a ia32,x64,simarm runtime create_sdk
-```
-
-If you don't want to set an environment variable, you can also do this:
-
-```
-$ ./tools/gn.py -m all -a all
-$ ./tools/build.py --gn -m debug,release -a ia32,x64,simarm runtime create_sdk
-```
-
-Note the addition of `--gn` to the command line of `build.py`
+Building with GN is the default. 'gclient sync' should pull everything that you'll need. If you want to fall-back on the gyp build you can set the environment variable `DART_USE_GYP` and rerun `gclient runhooks`. Though, keep in mind that gyp is deprecated, and any use of gyp should only be a temporary workaround.
 
 ## Windows
 
@@ -52,7 +37,7 @@ or wherever your Visual Studio install lives. Then do `gclient sync` and proceed
 
 ## Other Configurations
 
-The script in `tools/gn.py` can be used to build the VM in a number of different configurations, or with different cross-compilers and sysroots. For example `--asan` can be passed to build with ASAN on configurations that use Clang, `--no-clang` can be passed to use `gcc` instead of Clang on Linux, and so forth. See the script's help message for details.
+When you run `gclient runhooks`, we select a sensible set of default values for the available build options. These default options are the same ones used to build the Dart SDK the we distribute. The script in `tools/gn.py` can be used to build the VM in a number of other configurations, or with different cross-compilers and sysroots. For example `--asan` can be passed to build with ASAN on configurations that use Clang, `--no-clang` can be passed to use `gcc` instead of Clang on Linux, and so forth. See the script's help message for details.
 
 # Using GN
 
