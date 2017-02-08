@@ -21,6 +21,6 @@ $ dart hello.dart.snapshot arguments-for-use
 Hello, world!
 ```
 
-When running from an application snapshot, the Dart VM will not need to parse or compile classes and functions that were already used during the training run, so it spends more time running the user's code.
+When running from an application snapshot, the Dart VM will not need to parse or compile classes and functions that were already used during the training run, so it starts running user code sooner.
 
 These snapshots are CPU architecture specific, so a snapshot created by an x64 VM cannot run on an IA32 VM or vice versa. Also, because different code is generated in production mode and checked mode, an app snapshot created in production mode cannot be run in checked mode or vice versa.
