@@ -13,6 +13,7 @@ Generally cherry picks should be limited to the following categories:
 First, please validate that your cl merges cleanly and that relevant tests pass:
 
 ```console
+$ git fetch
 $ git new-branch --upstream origin/dev merge_my_awesome
 $ git cherry-pick #HASH_FROM_MASTER_THAT_NEEDS_CHERRY_PICKING
 ```
