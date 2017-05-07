@@ -1,4 +1,4 @@
-##Workflow
+## Workflow
 
 * Look through issues that don't have an area assigned.
   * Use the [SDK triage query].
