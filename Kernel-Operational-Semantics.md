@@ -39,7 +39,7 @@ Expression list configuration | Next configuration
 
 An application continuation configuration indicates the application of __A__ to a list of values.
 
-Expression list continuation configuration | Next configuration
+Application continuation configuration | Next configuration
 --|--
 <**StaticInvocation**(_S_, _K_), _valList_><sub>_acont_</sub> | <_S_, _&rho;_[_formalList_ &rarr; _valList_], _&empty;_, **Exit**<sub>_C_</sub>(_K_), _K_><sub>_exec_</sub>
 <**ValueApplication**(V, _A_), _valList_><sub>_acont_</sub> | <_A_, _V :: valList_><sub>_acont_</sub>
