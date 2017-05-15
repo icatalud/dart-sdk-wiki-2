@@ -20,6 +20,8 @@ Expression configuration | Next configuration
 <_print(E)_, _&rho;_, _K_><sub>_expr_</sub> | <_E_, _&rho;_, **Print**<sub>_K_</sub>(_K_)><sub>_expr_</sub>
 <_f(exprList)_, _&rho;_, _K_><sub>_expr_</sub> | <_exprList_, _&rho;_, **StaticInvocation**<sub>_A_</sub>(_S : f.body_, _K_)><sub>_exprList_</sub>
 <_BasicLiteral_, _&rho;_, _K_><sub>_expr_</sub> | <_K_, _BasicLiteral_, _&rho;_><sub>_cont_</sub>
+<_**Let** x = E<sub>1</sub> **in** E<sub>2</sub>_, _&rho;_, _K_><sub>_expr_</sub> | <_E<sub>1</sub>_, _&rho;_, **Let**<sub>K</sub>(_x_, E<sub>2</sub>, _&rho;_, _K_)><sub>_expr_</sub>
+
 
 #### Expression continuation configuration
 
