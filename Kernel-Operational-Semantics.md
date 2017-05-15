@@ -12,8 +12,14 @@ Expression configuration | Next configuration
 -- | --
 <_x_, _&rho;_, _K_><sub>_expr_</sub> | <_K_, _&rho;_(_x_), _&rho;_><sub>_cont_</sub>
 <_x = E_, _&rho;_, _K_><sub>_expr_</sub> | <_E_, _&rho;_, **VarSet**<sub>_K_</sub>(_x_, _K_)><sub>_expr_</sub>
-<_f(exprList)_, _&rho;_, _K_><sub>_expr_</sub> | <_exprList_, _&rho;_, **StaticInvocation**<sub>_A_</sub>(_S : f.body_, _K_)><sub>_exprList_</sub>
+<_!E_, _&rho;_, _K_><sub>_expr_</sub> | <_E_, _&rho;_, **Not**<sub>_K_</sub>(_K_)><sub>_expr_</sub>
+<_E<sub>1</sub> **and** E<sub>2</sub>_, _&rho;_, _K_><sub>_expr_</sub> | <_E<sub>1</sub>_, _&rho;_, **And**<sub>_K_</sub>(_E<sub>2</sub>_, _K_)><sub>_expr_</sub>
+<_E<sub>1</sub> **or** E<sub>2</sub>_, _&rho;_, _K_><sub>_expr_</sub> | <_E<sub>1</sub>_, _&rho;_, **Or**<sub>_K_</sub>(_E<sub>2</sub>_, _K_)><sub>_expr_</sub>
+<_E<sub>1</sub>? E<sub>2</sub> : E<sub>3</sub>_, _&rho;_, _K_><sub>_expr_</sub> | <_E<sub>1</sub>_, _&rho;_, **Conditional**<sub>_K_</sub>(_E<sub>2</sub>_, _E<sub>3</sub>_, _K_)><sub>_expr_</sub>
+<_StringConcat(exprList)_, _&rho;_, _K_><sub>_expr_</sub> | <_exprList_, _&rho;_, **StringConcatenation**<sub>_A_</sub>(_K_)><sub>_exprList_</sub>
 <_print(E)_, _&rho;_, _K_><sub>_expr_</sub> | <_E_, _&rho;_, **Print**<sub>_K_</sub>(_K_)><sub>_expr_</sub>
+<_f(exprList)_, _&rho;_, _K_><sub>_expr_</sub> | <_exprList_, _&rho;_, **StaticInvocation**<sub>_A_</sub>(_S : f.body_, _K_)><sub>_exprList_</sub>
+<_BasicLiteral_, _&rho;_, _K_><sub>_expr_</sub> | <_K_, _BasicLiteral_, _&rho;_><sub>_cont_</sub>
 
 #### Expression continuation configuration
 
@@ -23,7 +29,7 @@ Expression continuation configuration | Next configuration
 -- | --
 <**VarSet**(_x_, _K_), _V_, _&rho;_><sub>_cont_</sub> | <_K_, _V_, _&rho;_[_x_ &rarr; _V_]><sub>cont</sub>
 <**Print**(_K_), _V_, _&rho;_><sub>_cont_</sub> |  <_K_, _&empty;_, _&rho;_><sub>cont</sub>
-<**ExpressionList**(_tail_, _A_), _V_, _&rho;_><sub>_cont_</sub> | <_tail_, _&rho;_, **ValueApplication**<sub>_A_</sub>(_V_, _A_)><sub>_exprList_</sub>
+<**ExpressionList**(_exprList_, _A_), _V_, _&rho;_><sub>_cont_</sub> | <_exprList_, _&rho;_, **ValueApplication**<sub>_A_</sub>(_V_, _A_)><sub>_exprList_</sub>
 <**Expression**(_C_), _V_, _&rho;_ ><sub>_cont_</sub> | _C_
 
 #### Expression list configuration
