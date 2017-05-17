@@ -2,6 +2,6 @@ Dart Kernel is an intermediate language for Dart programs, a compact binary obje
 
 [Operational semantics](https://github.com/dart-lang/sdk/wiki/Kernel-Operational-Semantics)
 
-[Binary format](https://github.com/dart-lang/sdk/wiki/Kernel-Binary-Format)
+[Binary format](https://github.com/dart-lang/sdk/pkg/kernel/binary.md)
 
 [Debugging support](https://github.com/dart-lang/sdk/wiki/Kernel-Debugging-Support)
