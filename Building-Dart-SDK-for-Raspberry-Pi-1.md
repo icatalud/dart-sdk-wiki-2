@@ -17,29 +17,20 @@ $ ./tools/gn.py -m release -a armv6 \
 Then build as usual:
 
 ```bash
-$ ./tools/ninja.py -m release -a armv6 runtime
+$ ./tools/ninja.py -m release -a armv6 create_sdk
 ```
 
-You'll find the build products under `out/ReleaseXARM/`. You can optionally strip the dart binary to make it smaller:
-
-```bash
-/toolchain/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-strip \
-  out/ReleaseXARM/dart
-```
+You'll find the built SDK under `out/ReleaseXARMV6/dart-sdk`.
 
 # Run on Hardware
 
-To run Dart programs on the Pi, we'll create a Dart SDK:
-
-```bash
-./tools/ninja.py -m release -a armv6 create_sdk
-```
-
-Then, we'll upload this SDK to the device:
+To run Dart programs on the Pi, upload this SDK to the device:
 
 ```bash
 scp -r out/ReleaseXARM/dart-sdk pi@[raspberry pi ip address]:./dart-sdk
 ```
+
+Then, you can add `~/dart-sdk/bin` to your path, and use the SDK as usual.
 
 # Issues
 
