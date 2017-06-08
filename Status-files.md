@@ -156,7 +156,7 @@ There are a few different expression forms:
 *   **Parentheses** – If you want a `||` expression to be an operand to a `&&`
     expression, you can explicitly parenthesize.
 
-Here's some examples:
+Here are some examples:
 
 ```text
 [ ! $checked ]
