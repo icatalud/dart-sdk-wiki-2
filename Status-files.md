@@ -1,6 +1,5 @@
 Stability is important for a programming language used to implement applications
-that [manage billions of dollars](http://news.dartlang.org/2016/03/the-new-adwor
-ds-ui-uses-dart-we-asked.html). To that end, the Dart repository contains a
+that [manage billions of dollars](http://news.dartlang.org/2016/03/the-new-adwords-ui-uses-dart-we-asked.html). To that end, the Dart repository contains a
 comprehensive test suite to cover the various configurations, compilers, tools,
 and runtimes we maintain and support.
 
