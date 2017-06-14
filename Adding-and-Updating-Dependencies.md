@@ -8,9 +8,9 @@ for building and testing, and as libraries compiled into the Dart SDK. Please fo
 
 When adding new third party source dependencies please be very careful. Make sure that the license for the software is compatible with our license - a large set of licenses are more restrictive when you actually link in the source instead of just using the tools.
 For example, a compiler's license might allow using it to compile our binary, but could be too restrictive to allow using its source code as part of the source code for a Dart SDK tool.
-You must add a README.google if you check in third-party code, and note any local changes that have been applied to the code (see below for a template). Please cc ricow@google.com on any third-party additions. 
+You must add a README.google if you check in third-party code, and note any local changes that have been applied to the code (see below for a template). Please cc whesse@google.com on any third-party additions. 
 
-If you need to discuss license issues to make sure that a license is compatible please reach out to the legal team at google or talk with ricow@google.com who can guide you to the right
+If you need to discuss license issues to make sure that a license is compatible please reach out to the legal team at google or talk with whesse@google.com who can guide you to the right
 person. Please refrain from speculating about licenses or make assumptions about what you may and may not do. If in doubt you should ask. If you are not a Google employee contact a Dart team member who is.
 
 We have a few rules to follow,
@@ -28,13 +28,13 @@ For dependencies on non-dart-lang github repositories, please get the mirror up 
 
 # Third-party binaries and binary data in general
 
-We occasionally need add binary versions of tools to make our testing/build/distribution infrastructure easier to maintain. These can be tools derived from our own source code (like fixed stable versions of the Dart standalone binary), or can be open source tools (like the standalone Firefox binary). Please be absolutely sure that the binary is compatible with our license. If your binary is not needed for building/distributing the core dart tool-chain you should consider other options (e.g., lazily fetching the files from the source or from Google Cloud Storage). In any case, always be vigilant about the license and please cc ricow@google.com on any third party additions.
+We occasionally need add binary versions of tools to make our testing/build/distribution infrastructure easier to maintain. These can be tools derived from our own source code (like fixed stable versions of the Dart standalone binary), or can be open source tools (like the standalone Firefox binary). Please be absolutely sure that the binary is compatible with our license. If your binary is not needed for building/distributing the core dart tool-chain you should consider other options (e.g., lazily fetching the files from the source or from Google Cloud Storage). In any case, always be vigilant about the license and please cc whesse@google.com on any third party additions.
 
 # Where do they go
 We put third party binaries on Google Cloud Storage and fetch them using a DEPS hook. We pin the DEPS entries to the hashes of specific versions, and we never delete old entries from the bucket where they are located, since that would destroy our ability to do old builds. This allows us to only have a single location holding the binaries for bleeding edge, dev branch, and stable releases.
 
 Uploading binary data is done using upload_to_google_storage.py (http://src.chromium.org/svn/trunk/tools/depot_tools/upload_to_google_storage.py )
-and a corresponding hook is added to the DEPS file. Please note that only a select set of people have access to uploading. If you feel that you need access please contact ricow@
+and a corresponding hook is added to the DEPS file. Please note that only a select set of people have access to uploading. If you feel that you need access please contact whesse@
 
 # README.google templates
 
