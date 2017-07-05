@@ -1,5 +1,5 @@
 # Introduction
-These are instructions to check out and build a modified version of Chromium that embeds the DartVM.
+These are instructions to check out and build a modified version of Chromium 50 that embeds the DartVM (Dartium 50).
 
 ## Warning
 
@@ -80,12 +80,13 @@ and rebuild.
 
 Create a separate Dart enlistment (outside of the above Dartium enlistment e.g., dartium-git) from Dart's bleeding edge see https://code.google.com/p/dart/wiki/GettingTheSource
 
+Enlist in the Dartium src tree (Chromium and WebKit are now in the same GIT repository)
+
 ```
-svn ls https://dart.googlecode.com/svn/branches/bleeding_edge/
-mkdir dart-repo
-cd dart-repo
-gclient config https://dart.googlecode.com/svn/branches/bleeding_edge/deps/all.deps
-git svn clone -rHEAD https://dart.googlecode.com/svn/branches/bleeding_edge/dart dart
+git clone https://chromium.googlesource.com/dart/dartium/src src
+cd src
+git checkout -b 2661_work origin/releases/2661_work
+cd ..
 gclient sync -n && gclient runhooks
 ```
 Build the Dart release see https://code.google.com/p/dart/wiki/Building
