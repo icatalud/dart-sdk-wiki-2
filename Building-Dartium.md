@@ -29,9 +29,9 @@ gclient runhooks
 ```
 
 ## Checkout for committers
-A Chromium / Dartium checkout pulls code from ~90 repositories into a single directory hierarchy. We do not need to modify the vast majority of these. Dartium development typically requires commit access to 3 repositories: the Chromium repository (src), the Blink repository (src/third_party/WebKit), and the Dart repository (src/dart).
+A Chromium / Dartium checkout pulls code from ~90 repositories into a single directory hierarchy. We do not need to modify the vast majority of these. Dartium development typically requires commit access to 2 repositories: the Chromium repository (src) and Blink repository (src/third_party/WebKit), and the Dart repository (src/dart).
 
-For Chromium and Blink, we work off of Dart-specific branches that we maintain. These are branched off of beta branches of chromium.  They are stored in git repositories at https://chromium.googlesource.com/dart/dartium/src and https://chromium.googlesource.com/dart/dartium/blink.
+For Chromium and Blink, we work off of a Dart-specific branch that we maintain. As of Dartium 50, Chromium and Blink are part of the same repository and are in the git repository at https://chromium.googlesource.com/dart/dartium/src/+/releases/2661_work.
 
 ### Using Git
 ```bash
