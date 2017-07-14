@@ -87,7 +87,7 @@ Enlist in the Dartium src tree (Chromium and WebKit are now in the same GIT repo
 ```
 solutions = [
   { "name"        : "src/dart",
-    "url"         : "git@github.com:dart-lang/sdk.git",
+    "url"         : "git@github.com:dart-lang/sdk.git@dartium-1+",
     "deps_file"   : "tools/deps/dartium.deps/DEPS",
     "managed"     : False,
     "custom_deps" : {
