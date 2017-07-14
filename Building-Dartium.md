@@ -1,5 +1,5 @@
 # Introduction
-These are instructions to check out and build a modified version of Chromium 50 that embeds the DartVM (Dartium 50) the branch [dartium-1+](https://github.com/dart-lang/sdk/tree/dartium-1+) is based on the Dart 1.25.0-dev.6.0 branch.
+These are instructions to check out and build a modified version of Chromium 50 that embeds the DartVM (Dartium 50) the branch [dartium-1+](https://github.com/dart-lang/sdk/tree/dartium-1+) based on the Dart 1.25.0-dev.6.0 branch.
 
 ## Warning
 
