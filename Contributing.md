@@ -7,7 +7,7 @@ You can help the Dart project in many ways, in addition to contributing code. Fo
 If you'd like to improve the documentation, you have three options:
 
   * Give us feedback: [create a "Documentation issue/feedback" issue](https://code.google.com/p/dart/issues/entry?template=Documentation%20issue/feedback) in the Dart project. To see known doc issues, look for [issues where Area=Documentation](https://code.google.com/p/dart/issues/list?can=2&q=Area%3DDocumentation).
-  * Contribute to the Dart website, [www.dartlang.org](https://www.dartlang.org). The code and content for the Dart website is not in the main repo; it's in the [dartlang.org project on GitHub](https://github.com/dart-lang/dartlang.org). For more information, see [Writing for dartlang.org](https://github.com/dart-lang/dartlang.org/wiki/Writing-for-dartlang.org).
+  * Contribute to the Dart developer websites such as [www.dartlang.org](https://www.dartlang.org) (repo: [dart-lang/site-www](https://github.com/dart-lang/site-www)) and [webdev.dartlang.org](https://webdev.dartlang.org) (repo: [dart-lang/site-webdev](https://github.com/dart-lang/site-webdev)). For more information, see [Writing for *.dartlang.org](https://github.com/dart-lang/site-www/wiki/Writing-for-*.dartlang.org).
   * Improve the API reference docs at [api.dartlang.org](https://api.dartlang.org) by editing doc comments in the [Dart SDK repo](https://github.com/dart-lang/sdk/tree/master/sdk/lib). For more information on how to write API docs, see [Effective Dart: Documentation](https://www.dartlang.org/guides/language/effective-dart/documentation).
 
 ## Before you contribute
