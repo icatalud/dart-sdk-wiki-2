@@ -21,6 +21,9 @@ cd dartium
 # Create a .gclient file.
 gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart https://github.com/dart-lang/sdk.git@dartium-1+
 
+# run gclient from dartium (not dartium/src)
+cd ..
+
 # Checkout all the sub-projects.
 gclient sync
 
@@ -42,6 +45,8 @@ git ls-remote git@github.com:dart-lang/sdk.git
 mkdir dartium
 cd dartium
 gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart git@github.com:dart-lang/sdk.git@dartium-1+
+
+cd ..
 
 # Get latest version of all files
 gclient sync
