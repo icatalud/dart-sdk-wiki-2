@@ -19,7 +19,7 @@ mkdir dartium
 cd dartium
 
 # Create a .gclient file.
-gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart https://github.com/dart-lang/sdk.git
+gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart https://github.com/dart-lang/sdk.git@dartium-1+
 
 # Checkout all the sub-projects.
 gclient sync
@@ -41,7 +41,7 @@ git ls-remote git@github.com:dart-lang/sdk.git
 # Follow the steps above for non-committers, but use a git URL instead of an HTTPS URL to check out
 mkdir dartium
 cd dartium
-gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart git@github.com:dart-lang/sdk.git
+gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart git@github.com:dart-lang/sdk.git@dartium-1+
 
 # Get latest version of all files
 gclient sync
@@ -81,6 +81,23 @@ and rebuild.
 Create a separate Dart enlistment (outside of the above Dartium enlistment e.g., dartium-git) from Dart's bleeding edge see https://code.google.com/p/dart/wiki/GettingTheSource
 
 Enlist in the Dartium src tree (Chromium and WebKit are now in the same GIT repository)
+
+> NOTE you will probably want to change your dartium/.gclient configuration file to have a "managed"   : False, entry e,g,
+
+```
+solutions = [
+  { "name"        : "src/dart",
+    "url"         : "git@github.com:dart-lang/sdk.git",
+    "deps_file"   : "tools/deps/dartium.deps/DEPS",
+    "managed"     : False,
+    "custom_deps" : {
+        "src/third_party/WebKit" : None,
+    },
+    "safesync_url": "",
+  },
+]
+cache_dir = None
+```
 
 ```
 git clone https://chromium.googlesource.com/dart/dartium/src src
