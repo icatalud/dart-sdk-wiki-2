@@ -1,6 +1,6 @@
 # Introduction
 
-These are instructions for building and running the Dart standalone VM for an ARMv6 Raspberry Pi 1 device running the Raspbian distribution of Linux.
+These are instructions for building and running the Dart standalone VM for an ARMv6 Raspberry Pi 1 device running the Raspbian distribution of Linux. For the Raspberry Pi 2 and 3, there should normally be no need to build your own Dart SDK. Instead please try the pre-built Linux ARMv7 (Pi 2) and ARMv8 (Pi 3) builds distributed on www.dartlang.org [here](https://www.dartlang.org/install/archive).
 
 ## Building
 
