@@ -113,7 +113,11 @@ The way we handle stable releases is more or less equal to the way we handle dev
 
 ### Getting your changes to a new stable patch release
 
-Please see [Cherry picks to stable](Cherry picks to stable).
+First of, before doing any patch releases on stable the commits should already have been on dev for a number of days without reported issues (preferably more than a week). Also, before releasing it, we need more manual validation and sanity checking. Please send out a mail internally requesting for feedback and ask the people responsible for the patches going in to validate functionality.
+
+We normally simply cherry pick the changes from master, and there is no difference in how we do this compared to dev channel, except, we don't increase PRERELEASE_PATCH, we increase PATCH in the tools/VERSION file.
+
+Once you are ready, create a cherry pick issue, see [Cherry picks to stable](https://github.com/dart-lang/sdk/wiki/Cherry-picks-to-stable-channel).
 
 ### Doing a new full stable build
 Assume that the dev channel build we want to base this of is #DEV_HASH_TO_BASE_RELEASE_OFF
@@ -139,8 +143,3 @@ git push --tags
 ```
 
 Finally, make sure everything on the [release checklist](https://github.com/dart-lang/sdk/wiki/Release-checklist) is completed.
-
-### Cherry picks to stable
-First of, before doing any patch releases on stable the commits should already have been on dev for a number of days without reported issues (preferably more than a week). Also, before releasing it, we need more manual validation and sanity checking. Please send out a mail internally requesting for feedback and ask the people responsible for the patches going in to validate functionality.
-
-We normally simply cherry pick the changes from master, and there is no difference in how we do this compared to dev channel, except, we don't increase PRERELEASE_PATCH, we increase PATCH in the tools/VERSION file.
