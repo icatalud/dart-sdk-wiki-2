@@ -2,10 +2,10 @@ The **Stable channel** is where we release our stable releases. It is produced f
 
 We differentiate between two types of stable releases:
 
-   * **Stable feature releases**: For example, 1.21. These are our main new feature releases, and contain new capabilities, and a larger amount of bug fixes.
+   * **Stable feature releases**: For example, 1.21.0. These are our main new feature releases, and contain new capabilities, and a larger amount of bug fixes.
    * **Stable patch releases**: For example, 1.21.2. These are patches to feature releases, and contain no new capabilities, and a very small amount of bug fixes.
 
-The [Dart downloads page](https://www.dartlang.org/install/archive) lists the latest stable release (i.e., either the latest major release, of if available the last stable patch release).
+The [Dart downloads page](https://www.dartlang.org/install/archive) lists the latest stable release (i.e., feature or patch release).
 
 ## Getting your changes to a new stable patch release
 
@@ -32,7 +32,7 @@ $ git cherry-pick #HASH_FROM_MASTER_THAT_NEEDS_CHERRY_PICKING
 ### Step 3
 Then, build and run the tests, and ensure that all tests are passing. 
 
-If it does not merge cleanly please supply a patch by fixing merge conflicts locally and uploading a cl to rietveld by doing `git cl upload`, and link to the review in the merge request.
+If it does not merge cleanly please supply a patch by fixing merge conflicts locally and uploading a cl by doing `git cl upload`, and link to the review in the merge request.
 
 ### Step 4
 Finally, please file a [merge to stable request issue](https://goo.gl/vcmz7o).
