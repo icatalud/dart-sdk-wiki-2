@@ -1,4 +1,4 @@
-The **Stable channel** is where we release our stable releases. It is produced from the [stable branch(https://github.com/dart-lang/sdk/blob/stable/tools/VERSION).
+The **Stable channel** is where we release our stable releases. It is produced from the [stable branch](https://github.com/dart-lang/sdk/blob/stable/tools/VERSION).
 
 We differentiate between two types of stable releases:
 
