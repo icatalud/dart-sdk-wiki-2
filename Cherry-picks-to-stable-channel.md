@@ -2,8 +2,15 @@ The **Stable channel** is where we release our stable releases. It is produced f
 
 We differentiate between two types of stable releases:
 
-   * **Stable feature releases**: For example, 1.21.0. These are our main new feature releases, and contain new capabilities, and a larger amount of bug fixes.
-   * **Stable patch releases**: For example, 1.21.2. These are patches to feature releases, and contain no new capabilities, and a very small amount of bug fixes.
+  * **Stable feature releases**:
+    * For example, 1.21.0.
+    * Our main new feature releases.
+    * They contain new capabilities, and a larger amount of bug fixes.
+
+  * **Stable patch releases**:
+    * For example, 1.21.2.
+     * Patches to feature releases.
+     * They contain no new capabilities, and a very small amount of bug fixes.
 
 The [Dart downloads page](https://www.dartlang.org/install/archive) lists the latest stable release (i.e., feature or patch release).
 
