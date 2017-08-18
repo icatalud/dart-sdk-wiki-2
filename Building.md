@@ -1,3 +1,15 @@
+[Dependencies](#dependencies)
+
+[Getting the source](#source)
+
+[Building](#building)
+
+[Testing](#testing)
+
+[Building the standalone VM only](#standalone)
+
+<a name="dependencies"/>
+
 # Dependencies
 
 ## C++11
@@ -37,6 +49,8 @@ Install VisualStudio.
 
 Install Chromium's [depot tools](http://dev.chromium.org/developers/how-tos/install-depot-tools).
 
+<a name="source"/>
+
 # Getting the source
 
 ```bash
@@ -55,6 +69,7 @@ gclient config git@github.com:dart-lang/sdk.git
 gclient sync
 ```
 
+<a name="building"/>
 
 # Building
 
@@ -122,6 +137,8 @@ For example, this will produce Visual Studio 2015-compliant solution files:
 set gyp_msvs_version=2015
 gclient runhooks
 ```
+
+<a name="testing"/>
 
 # Testing
 
@@ -198,7 +215,7 @@ Dart2JS example:
 ```
 
 ## Troubleshooting and tips for browser tests
-  1. To debug a browser test failure, you must start a local http server to serve the test.  This is made easy with a helper script in dart/tools/testing.  The error report from test.py gives the command line to start the server in a message that reads:
+To debug a browser test failure, you must start a local http server to serve the test.  This is made easy with a helper script in dart/tools/testing.  The error report from test.py gives the command line to start the server in a message that reads:
 ```bash
 To retest, run:  /usr/local/[...]/dart/tools/testing/bin/linux/dart /usr/local/[...]/dart/tools/testing/dart/http_server.dart ...
 ```
@@ -209,10 +226,14 @@ Some common problems you might get when running tests for the first time:
   * Some fonts are missing. Chromium tests use `DumpRenderTree`, which needs some sets of fonts. See [LayoutTestsLinux](http://code.google.com/p/chromium/wiki/LayoutTestsLinux) for instructions in how to fix it.
   * No display is set (e.g. running tests from an ssh terminal). `DumpRenderTree` is a nearly headless browser. Even though it doesn't open any GUI, it still must have an X session available. There are several ways to work around this:
     * Use `xvfb`:
-```bash
-xvfb-run ./tools/test.py --arch=ia32 --compiler=dart2js --runtime=drt ...
-```
+
+      ```bash
+      xvfb-run ./tools/test.py --arch=ia32 --compiler=dart2js --runtime=drt ...
+      ```
+
     * Other options include using ssh X tunneling (`ssh -Y`), NX, VNC, setting up `xhost` and exporting the DISPLAY environment variable, or simply running tests locally.
+
+<a name="standalone"/>
 
 # Building the standalone VM only
 
