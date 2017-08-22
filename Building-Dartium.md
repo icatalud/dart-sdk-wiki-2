@@ -23,8 +23,8 @@ gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart https://
 ```
 <br/>**NOTE: The depot_tools gclient has changed**<br/>
 _The language of the DEPS files has changed (as of August 2017) that makes our old DEPS file_  
-_invalid from the Dartium release (locked to July 2017 version 1.25.0-dev.6.0). The_  
-_depot_tools will automatically update when_ _gclient is run._  
+_invalid from the Dartium release (locked to July 2017 version 1.25.0-dev.6.0). The depot_tools_  
+_will automatically update when_ _gclient is run._  
 <br/>To work around this problem:  
 ```
 Set current directory to your depot_tools enlistment e.g.,
