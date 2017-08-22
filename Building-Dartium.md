@@ -36,7 +36,7 @@ Instead of using gclient sync and gclient runhooks now use:
 
 > cd ~/dartium
 
-# Checkout all the sub-projects w/o updating depot_tools e.g., DEPOT_TOOLS_UPDATE=0
+# Checkout all sub-projects w/o updating depot_tools e.g., DEPOT_TOOLS_UPDATE=0
 > DEPOT_TOOLS_UPDATE=0 gclient sync
 # Generate the build files for the current OS. (Run as part of gclient sync.)
 > DEPOT_TOOLS_UPDATE=0 gclient runhooks
