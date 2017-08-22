@@ -20,13 +20,29 @@ cd dartium
 
 # Create a .gclient file.
 gclient config --deps-file tools/deps/dartium.deps/DEPS --name=src/dart https://github.com/dart-lang/sdk.git@dartium-1+
-
-# Checkout all the sub-projects.
-gclient sync
-
-# Generate the build files for the current OS. (This is usually, but not always, run as part of gclient sync.)
-gclient runhooks
 ```
+<br/>**NOTE: The depot_tools gclient has changed**<br/>
+_The language of the DEPS files has changed (as of August 2017) that makes our old DEPS file invalid from the_  
+_Dartium release (locked to July 2017 version 1.25.0-dev.6.0). The depot_tools will automatically update when_ _gclient is run._  
+<br/>To work around this problem:  
+```
+Set current directory to your depot_tools enlistment e.g.,
+> cd ~/depot_tools
+> git checkout 5aa5cd76f00e7774f71367f34d9998cfa0034d04
+> git checkout -b LOCK_OLD_DEPS_SYNTAX
+
+Instead of using gclient sync and gclient runhooks now use:
+
+> cd ~/dartium
+
+# Checkout all the sub-projects without updating depot_tools e.g., DEPOT_TOOLS_UPDATE=0
+> DEPOT_TOOLS_UPDATE=0 gclient sync
+# Generate the build files for the current OS. (This is usually, but not always, run as part of gclient sync.)
+> DEPOT_TOOLS_UPDATE=0 gclient runhooks
+```
+**Obsolete usage:**  
+\> _gclient sync_  
+\> _gclient runhooks_  
 
 ## Checkout for committers
 A Chromium / Dartium checkout pulls code from ~90 repositories into a single directory hierarchy. We do not need to modify the vast majority of these. Dartium development typically requires commit access to 2 repositories: the Chromium repository (src) and Blink repository (src/third_party/WebKit), and the Dart repository (src/dart).
