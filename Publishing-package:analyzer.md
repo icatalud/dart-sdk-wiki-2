@@ -4,8 +4,8 @@
 
 Publishing a new alpha version of package analyzer involves a few steps:
 - rev package:analyzer to a new alpha version (`0.31.0-alpha.0` ==> `0.31.0-alpha.1`)
-- rev package:front_end to a new alpha version; update it's version of package:kernel (see the next line)
-- rev package:kernel to a new alpha version; update it's version of package:front_end
+- rev package:front_end to a new alpha version; update its version of package:kernel (see the next line)
+- rev package:kernel to a new alpha version; update its version of package:front_end
 - update the kernel and front_end version in `package:analyzer`'s pubspec
 - commit a CL with the above changes
 - publish `package:analyzer`, `package:kernel`, and `package:front_end`
