@@ -1,5 +1,7 @@
 ## Publishing an alpha version
 
+`package:analyzer` depends on kernel and front_end. We push those last two packages for the benefit of `package:analyzer`, but their APIs don't currently follow semver, so we set analyzer to depend on exact versions.
+
 Publishing a new alpha version of package analyzer involves a few steps:
 - rev package:analyzer to a new alpha version (`0.31.0-alpha.0` ==> `0.31.0-alpha.1`)
 - rev package:front_end to a new alpha version; update it's version of package:kernel (see the next line)
