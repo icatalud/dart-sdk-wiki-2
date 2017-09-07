@@ -6,7 +6,7 @@ There are several ways to contribute code in GitHub, for example
 
 ## Step 1: get the source
 
-[Checkout the source](../Building#source)
+[Checkout the source](/dart-land/sdk/wiki/Building#source)
 
 Tip: if you want to get automatic backups of an NFS directory, but take advantage of fast git performance on a local directory, you can use the instructions above in an NFS directory and use a mirror in a local directory with git-new-workdir.
 
