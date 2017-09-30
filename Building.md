@@ -22,7 +22,7 @@ are GCC version 4.8 (4.6 is known not to work) and Microsoft Visual Studio 2015 
 Install build tools:
 
 ```bash
-sudo apt-get install g++ git make python
+sudo apt-get install g++ git make python curl
 sudo apt-get install g++-multilib  # If you want to build 32-bit binaries on a 64-bit host.
 ```
 
@@ -47,7 +47,9 @@ export PATH="$PATH:$PWD/depot_tools"
 
 Install VisualStudio.
 
-Install Chromium's [depot tools](http://dev.chromium.org/developers/how-tos/install-depot-tools).
+Install Chromium's depot tools following [this](http://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up) or [this](https://chromium.googlesource.com/chromium/src/+/master/docs/windows_build_instructions.md#install) instructions.
+
+**Important:** If you are not a Googler make sure to set `DEPOT_TOOLS_WIN_TOOLCHAIN` system variable to `0` otherwise depot tools will attempt to pull down a Google-internal toolchain instead of using a local installation of Visual Studio.
 
 <a name="source"/>
 
