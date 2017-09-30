@@ -56,16 +56,7 @@ Install Chromium's [depot tools](http://dev.chromium.org/developers/how-tos/inst
 ```bash
 mkdir dart-sdk
 cd dart-sdk
-gclient config https://github.com/dart-lang/sdk.git
-gclient sync
-```
-
-Or if you have [ssh keys setup for GitHub](https://help.github.com/articles/generating-an-ssh-key/) (recommended for committers):
-
-```bash
-mkdir dart-sdk
-cd dart-sdk
-gclient config git@github.com:dart-lang/sdk.git
+gclient config https://dart.googlesource.com/sdk.git
 gclient sync
 ```
 
