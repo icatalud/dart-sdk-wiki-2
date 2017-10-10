@@ -65,7 +65,7 @@ The full test matrix is so huge that we recommend you use minimal local testing 
 ```
 ./tools/build.py -m release dart2js_bot
 ./tools/test.py -mrelease --use-sdk --time -pcolor --report --checked dart2js utils
-./tools/test.py -mrelease -cdart2js -rd8 --use-sdk --time -pcolor --report --host-checked dart2js_extra dart2js_native
+./tools/test.py -mrelease -cdart2js -rd8 --time -pcolor --report --host-checked dart2js_extra dart2js_native
 ./tools/test.py -mrelease -cdart2js -rd8,drt --use-sdk --time -pcolor --report
 ```
 
