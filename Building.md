@@ -102,22 +102,6 @@ The environment variable `DART_BUILD_NOTIFICATION_DELAY` controls if `build.py` 
 
 A notification is a small transient non-modal window, for now, only supported on Mac and Linux.
 
-## Building with clang on linux
-
-After doing a "gclient sync", clang can be used for compiling the runtime with
-```bash
-cd sdk
-rm -r out
-export CC=third_party/clang/linux/bin/clang
-export CC_host=third_party/clang/linux/bin/clang
-export CXX=third_party/clang/linux/bin/clang++
-export CXX_host=third_party/clang/linux/bin/clang++
-export C_INCLUDE_PATH=third_party/clang/linux/lib/clang/3.4/include/
-export CPLUS_INCLUDE_PATH=third_party/clang/linux/lib/clang/3.4/include/
-gclient runhooks
-./tools/build.py -m release -a all runtime
-```
-
 ## Special note for Windows users using Visual Studio Community Edition:
 Your Visual Studio executable command may have a different name from the standard Visual Studio installations. You can specify the name for that executable by passing the additional flag "--executable=$VS\_EXECUTABLE\_NAME" to build.py. The executable name will probably be something like "VSExpress.exe".
 
