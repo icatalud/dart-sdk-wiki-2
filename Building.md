@@ -58,7 +58,7 @@ Install Chromium's depot tools following [this](http://commondatastorage.googlea
 ```bash
 mkdir dart-sdk
 cd dart-sdk
-gclient config https://dart.googlesource.com/sdk.git
+gclient config --unmanaged https://dart.googlesource.com/sdk.git
 gclient sync
 ```
 
