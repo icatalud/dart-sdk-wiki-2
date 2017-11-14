@@ -73,7 +73,7 @@ cd dart-sdk/sdk
 ./tools/build.py --mode release --arch x64 create_sdk
 ```
 
-The output will be in `out/ReleaseX64/dart_sdk`, `xcodebuild/ReleaseX64/dart_sdk`, or `build/ReleaseX64/dart_sdk` on Linux, Mac or Windows respectively.
+The output will be in `out/ReleaseX64/dart_sdk` on Linux and Windows, and `xcodebuild/ReleaseX64/dart_sdk` on MacOS.
 
 Build the 32-bit SDK:
 
