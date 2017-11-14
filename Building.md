@@ -81,7 +81,7 @@ Build the 32-bit SDK:
 cd dart-sdk/sdk
 ./tools/build.py --mode release --arch ia32 create_sdk
 ```
-The output will be in `out/ReleaseIA32/dart_sdk`, `xcodebuild/ReleaseIA32/dart_sdk`, or `build/ReleaseIA32/dart_sdk` on Linux, Mac or Windows respectively.
+The output will be in `out/ReleaseIA32/dart_sdk` on Linux and Windows, or `xcodebuild/ReleaseIA32/dart_sdk` on MacOS.
 
 See also [building for ARM](https://github.com/dart-lang/sdk/wiki/Building-Dart-SDK-for-ARM-processors).
 
