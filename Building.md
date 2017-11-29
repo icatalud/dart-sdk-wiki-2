@@ -114,6 +114,36 @@ set gyp_msvs_version=2015
 gclient runhooks
 ```
 
+## Building revisions from before August 2017
+
+At the end of July 2017, the `gclient` tool's behavior changed.  If you try to build old versions of the SDK from before that time (e.g., for `git bisect`), it might fail.  If you follow a workflow where you check out a commit and then run `gclient sync` you might encounter a message like:
+
+```
+sdk (ERROR)
+----------------------------------------
+[0:00:00] Started.
+[0:00:00] ________ unmanaged solution; skipping sdk
+----------------------------------------
+```
+
+This is because `gclient` has changed the domain-specific language of the `DEPS` files in a way that makes our old `DEPS` files invalid; and because `gclient` will automatically update itself to the latest revisionwhenever it is run.
+
+There is a workaround:
+
+  1. In your `depot_tools` repository, check out the last `gclient` commit that works with our old `DEPS` files:
+
+     ```
+     git checkout 5aa5cd76f00e7774f71367f34d9998cfa0034d04
+     ```
+
+  2. In your Dart SDK repository, run `gclient` without updating itself:
+
+     ```
+     DEPOT_TOOLS_UPDATE=0 gclient sync
+     ```
+
+An then build according to the instructions for your platform.
+
 <a name="testing"/>
 
 # Testing
