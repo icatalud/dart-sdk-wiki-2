@@ -22,7 +22,7 @@ are GCC version 4.8 (4.6 is known not to work) and Microsoft Visual Studio 2015 
 Install build tools:
 
 ```bash
-sudo apt-get install g++-multilib git make python curl
+sudo apt-get install g++-multilib git python curl
 ```
 
 Install Chromium's [depot tools](http://dev.chromium.org/developers/how-tos/install-depot-tools):
