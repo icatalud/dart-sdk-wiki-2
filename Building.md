@@ -54,11 +54,12 @@ Install Chromium's depot tools following [this](http://commondatastorage.googlea
 
 # Getting the source
 
+You can choose whatever name you want for the directory to check dart out in, here it is called `dart-sdk`.
+
 ```bash
 mkdir dart-sdk
 cd dart-sdk
-gclient config --unmanaged https://dart.googlesource.com/sdk.git
-gclient sync
+fetch dart
 ```
 
 <a name="building"/>
