@@ -24,3 +24,14 @@ Hello, world!
 When running from an application snapshot, the Dart VM will not need to parse or compile classes and functions that were already used during the training run, so it starts running user code sooner.
 
 These snapshots are CPU architecture specific, so a snapshot created by an x64 VM cannot run on an IA32 VM or vice versa. Also, because different code is generated in production mode and checked mode, an app snapshot created in production mode cannot be run in checked mode or vice versa.
+
+# Comparison
+
+For comparison, here are the relative sizes and times for dart2js compiling hello world.
+
+| Kind             | Size (B) | Time to Main (ms) | Time to Compile (ms) |
+| ---------------- | -------: |-----------------: | -------------------: |
+| Source           |  9598555 |               711 |                 2471 |
+| Script snapshot  |  3680518 |               224 |                 2307 |
+| App-JIT snapshot | 19484512 |                81 |                  719 |
+| App-AOT snapshot | 29219040 |                40 |                  541 |
