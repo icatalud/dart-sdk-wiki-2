@@ -1,8 +1,5 @@
-# Introduction
-
 Since Dart is an open-source project we rely on a number of other open-source projects, as tools
 for building and testing, and as libraries compiled into the Dart SDK. Please follow these guidelines when working with third-party dependencies in both source and binary form.
-
 
 # Third-party source dependencies
 
@@ -11,26 +8,27 @@ For example, a compiler's license might allow using it to compile our binary, bu
 You must add a README.google if you check in third-party code, and note any local changes that have been applied to the code (see below for a template). Please cc whesse@google.com on any third-party additions. 
 
 If you need to discuss license issues to make sure that a license is compatible please reach out to the legal team at google or talk with whesse@google.com who can guide you to the right
-person. Please refrain from speculating about licenses or make assumptions about what you may and may not do. If in doubt you should ask. If you are not a Google employee contact a Dart team member who is.
+person. Please refrain from speculating about licenses or make assumptions about what you may and may not do. If in doubt you should ask. If you are not a Google employee, contact a Dart team member who is.
 
-We have a few rules to follow,
-to make sure that we can continue to build older versions of the sdk even if people delete or rewrite the history of repositories containing our third-party dependencies. There are two options for using repositories not hosted under https://github.com/dart-lang/ or https://github.com/google/
-The first option is to simply get the repo moved to the dart-lang org, or fork it there. Forking an repo is not very nice since you get fragmented versions. If you do so, please state in the README that this is used for pulling as a DEPS, don't make local changes, and be sure not to publish to pub from the dart-lang fork.
+We have a few rules to make sure that we can continue to build older versions of the SDK even if people delete or rewrite the history of repositories containing our third-party dependencies. There are two options for using repositories not hosted under https://github.com/dart-lang/ or https://github.com/google/:
 
-The second option is to get the github repo mirrored on the chromium git servers, and pull the dependency from there. This is the same way we do normal dependencies from dart-lang (see below), with one exception:
-**IMPORTANT**: For security reasons we require all code that we pull in to build the Dart SDK be reviewed by Google employees, no matter where it comes from. This means that you, or a Google employee, need to do an initial review of all code up to and including the commit you put in the DEPS file for all external packages.
+1. Move the dart-lang org, or fork it there. Moving is better than forking since it avoids fragmented versions. If you do fork, please state in the README that this is used for pulling in as a DEPS, don't make local changes, and be sure to not publish to pub from the dart-lang fork.
 
-All external packages must be pinned to a fixed commit (revision) in the DEPS file. If you update the DEPS to pin a newer version, you need to do another review, of the changes between the two revisions. You can upload the review (of the changes in the dependency, not just the change in the DEPS file) to https://codereview.chromium.org for easy reviewing, and upstream any fixes in this dependency, before pinning the new version of the dependency.
+2. Get the github repo mirrored on the chromium git servers, and pull the dependency from there. This is the same way we do normal dependencies from dart-lang (see below), with one important exception:
+**For security reasons, all code pulled in to build the Dart SDK must be reviewed by Google employees, no matter where it comes from.** This means that you, or a Google employee, need to do an initial review of all code up to and including the commit you put in the DEPS file for all external packages.
 
-For dependencies on https://github.com/dart-lang/ the setup is less complicated, but we still need a mirror. Go ahead and add the dependency to the DEPS file for local development, but please add the dependency directly on http://github.com/dart-lang/REPO.git, don't use the the github_mirror variable from the DEPS file. You can file an issue requesting a mirror on github. Give the issue the label 'area-infrastructure'. The mirrors go to https://chromium.googlesource.com/external/github.com/dart-lang/REPO.git. When the mirror is set up, commit your changes to the DEPS file pointing at the github mirror.
+All external packages must be pinned to a fixed commit (revision) in the DEPS file. If you update the DEPS to pin a newer version, you need to do another review of the changes between the two revisions. You can upload the review (of the changes in the dependency, not just the change in the DEPS file) to https://codereview.chromium.org for easy reviewing, and upstream any fixes in this dependency, before pinning the new version of the dependency.
 
-For dependencies on non-dart-lang github repositories, please get the mirror up before adding the dependency to the DEPS file, and use the mirror to pull from.
+For dependencies on https://github.com/dart-lang/ the setup is less complicated, but we still need a mirror. File an issue labeled 'area-infrastructure' requesting a mirror on github. The mirrors go to https://chromium.googlesource.com/external/github.com/dart-lang/<repo>.git. Once the mirror is set up, you can commit your changes to the DEPS file pointing at the github mirror.
+
+While you wait for the mirror to get set up, you can add the dependency to the DEPS file pointing directly to `http://github.com/dart-lang/<repo>.git`. This will let you develop against the dependency locally, but don't commit this.
 
 # Third-party binaries and binary data in general
 
 We occasionally need add binary versions of tools to make our testing/build/distribution infrastructure easier to maintain. These can be tools derived from our own source code (like fixed stable versions of the Dart standalone binary), or can be open source tools (like the standalone Firefox binary). Please be absolutely sure that the binary is compatible with our license. If your binary is not needed for building/distributing the core dart tool-chain you should consider other options (e.g., lazily fetching the files from the source or from Google Cloud Storage). In any case, always be vigilant about the license and please cc whesse@google.com on any third party additions.
 
 # Where do they go
+
 We put third party binaries on Google Cloud Storage and fetch them using a DEPS hook. We pin the DEPS entries to the hashes of specific versions, and we never delete old entries from the bucket where they are located, since that would destroy our ability to do old builds. This allows us to only have a single location holding the binaries for bleeding edge, dev branch, and stable releases.
 
 Uploading binary data is done using upload_to_google_storage.py (http://src.chromium.org/svn/trunk/tools/depot_tools/upload_to_google_storage.py )
