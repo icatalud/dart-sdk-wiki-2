@@ -6,7 +6,7 @@
 
 1. When linking to an associated GitHub Issue
   * **DO NOT** put `Issue 234` in the title
-  * **DO** Use the full GitHub URL to the issue - this ensures that the issue is clickable in RIETVELD
+  * **DO** Use the full GitHub URL to the issue - this ensures that the issue is clickable in Gerrit
   * **DO** Use GitHub notation to auto-close bugs on commit
     * This: `Closes https://github.com/dart-lang/sdk/issues/25595`
     * Not this: `BUG=https://github.com/dart-lang/sdk/issues/25595`
