@@ -12,6 +12,6 @@ the CLA. They can be submitted like any other patch in Gerrit.
     reviewer.
 *   The owner of the review is the "Copybara Service" user (subject to change).
 *   Find all open or merged synced PRs in Gerrit
-    [here](https://dart-review.googlesource.com/q/hashtag:%22github-pr%22+\(status:open%20OR%20status:merged\))
+    [here](https://dart-review.googlesource.com/q/hashtag:%22github-pr%22+\(status:open%20OR%20status:merged\)).
 *   When the Gerrit CL is submitted the PR will be closed automatically.
 *   In the future, a link to the Gerrit review will be added to the PR.
