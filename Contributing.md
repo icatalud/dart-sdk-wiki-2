@@ -62,18 +62,23 @@ Your local workflow may vary.
 Upload the patch for review:
 
 ```bash
-git cl upload
+git cl upload -s
 ```
 
 The above command returns a URL for the review. Attach this review to your issue in http://dartbug.com
 
-If you have commit access, when the review is done and the patch is good to go, commit the patch:
+If you have commit access, when the review is done and the patch is good to go, submit the patch on https://dart-review.googlesource.com:
 
 ```bash
-git cl land
+git cl web # opens your review on https://dart-review.googlesource.com
 ```
 
-If you do not have commit access, a Dart engineer will commit for you, assuming the patch is reviewed and accepted.
+*   Press "Submit to CQ" (CQ stands for "Commit Queue").
+*   You can follow the progress by looking at the "Tryjobs" panel in your review.
+*   Once the Commit Queue is green, the patch will be merged.
+*   If any of the try jobs is red, you will have to fix the errors and then "Submit to CQ" once more.
+
+If you do not have commit access, a Dart engineer will commit on your behalf, assuming the patch is reviewed and accepted.
 
 More detailed instructions for the `git cl` tools available on http://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_creating_uploading_a_cl
 
@@ -82,11 +87,8 @@ More detailed instructions for the `git cl` tools available on http://commondata
 If the author of a patch is not a committer, they will need help landing the patch.
 Once a patch gets an LGTM, it's easy for a committer to merge it in.
 
-```bash
-git checkout master
-git cl patch _patch_number_
-git cl land -c "Jane Dev <jane_dev@example.com>"
-```
+* Find and open the review on https://dart-review.googlesource.com.
+* Follow the instructions in the previous section to submit the patch.
 
 ## Coding style
 
