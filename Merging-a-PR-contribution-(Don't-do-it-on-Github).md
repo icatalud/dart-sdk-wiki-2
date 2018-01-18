@@ -1,7 +1,7 @@
 While creating Gerrit reviews is the preferred approach to contribute to the
 Dart SDK, contributors sometimes create PRs, anyway.
 
-**GitHub PRs MUST NOT be merged on GitHub for the SDK repo. Merging a
+**For administrators: GitHub PRs MUST NOT be merged on GitHub for the SDK repo. Merging a
 GitHub PR directly breaks mirroring and the repository will be closed until mirroring
 is restored.**
 
