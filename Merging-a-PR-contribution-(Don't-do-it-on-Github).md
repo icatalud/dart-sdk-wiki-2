@@ -1,11 +1,17 @@
-Because the sdk repository on GitHub is a mirror of dart.googlesource.com/sdk.git,
-pull requests at GitHub should not be landed directly on the GitHub repository.
-Merging pull requests is disabled for everyone except administrators, but they
-should not merge pull requests either.
+While creating Gerrit reviews is the preferred approach to contribute to the
+Dart SDK, contributors sometimes create PRs, anyway.
 
-We are working on a system that automatically creates Gerrit reviews at
-dart-review.googlesource.com from GitHub pull requests, and will update
-this page when it is completed.
+**GitHub PRs MUST NOT be merged on GitHub for the SDK repo. Merging a
+GitHub PR directly breaks mirroring and the repository will be closed until mirroring
+is restored.**
 
-Until then, you can check out a pull request branch locally, and make a
-Gerrit CL with the "git cl upload" command, or contact dart-engprod@google.com
+Instead, GitHub PRs are automatically synced to Gerrit if their owner has signed
+the CLA. They can be submitted like any other patch in Gerrit.
+
+*   If the creator of the PR has a Gerrit user account, they will be added as a
+    reviewer.
+*   The owner of the review is the "Copybara Service" user (subject to change).
+*   Find all open or merged synced PRs in Gerrit
+    [here](https://dart-review.googlesource.com/q/hashtag:%22github-pr%22+\(status:open%20OR%20status:merged\))
+*   When the Gerrit CL is submitted the PR will be closed automatically.
+*   In the future, a link to the Gerrit review will be added to the PR.
