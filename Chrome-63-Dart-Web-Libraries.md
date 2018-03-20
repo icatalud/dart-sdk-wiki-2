@@ -7,42 +7,43 @@ The Dart Web Libraries have not been updated since Chrome 50.  With this release
     - Example of [Migrating initTouchEvent to Map](https://developers.google.com/web/updates/2016/09/chrome-54-deprecations#use_of_inittouchevent_is_removed)
 * TouchEvent constructor takes a map argument, strong mode catches these failures in our tests.
 * Web_audio
-AudioScheduledSourceNode.start (inherits in OscillatorNode too) e.g., operation void start([num when]);
-AudioBufferSourceNode.start([num when, num grainOffset, num grainDuration]) can't be overloaded void start2([num when, num grainOffset, num grainDuration])
-Attributes of type double changed to type num table of attributes changed.
-onWheel event exposed
-Created for union of two kinds of canvas HTMLCanvasElement and OffscreenCanvas interface WebGLCanvas
-all other RenderingContext
-readonly attribute WebGLCanvas canvas;
-interface WebGLRenderingContext
-readonly attribute HTMLCanvasElement canvas;
-KeygenElement was removed in Chrome 57
-IDBFactory.webkitGetDatabaseNames() constructor removed in Chrome
-Depreciated FileError and DomError have been removed use DomException
-error.code replaced with error.name  (e.g., see fileapi_directory_test.dart)
-Additional because FileError is gone there is no easy way to determine which errors are File only errors.  However, these are:
-NOT_FOUND_ERR
-SECURITY_ERR
-ABORT_ERR
-NO_MODIFICATION_ALLOWED_ERR
-INVALID_STATE_ERR
-SYNTAX_ERR
-INVALID_MODIFICATION_ERR
-QUOTA_EXCEEDED_ERR
-TYPE_MISMATCH_ERR
-registerElement and register maps to old style (Chrome 50)
-registerElement2 2nd parameter is a map {'prototype': xxx, 'extends': xxxx} not 2 separate arguments.
-List<Rectangle> getClientRects() is now DomRectList getClientRects()
-Rectangle getBoundingClientRect() is now DomRect getBoundingClientRect()
-postMessage(/*any*/ message, String targetOrigin, [List<MessagePort> transfer]) changed to void postMessage(/*any*/ message, String targetOrigin, [List<Object> transfer]) transfer can now be ArrayBuffer, MessagePort and ImageBitmap
-RTCPeerConnection.setLocalDescription and setRemoteDescription
-takes a Map setLocalDescription(Map description) description is a map e.g.,  {'type': localSessionDescription, 'sdp': fakeLensSdp}
-nounce removed from HtmlScriptElement added to HtmlElement
-https://codereview.chromium.org/2801243002 https://github.com/whatwg/html/issues/2369
-Event.deepPath() was removed Chrome 54
-https://developer.mozilla.org/en-US/docs/Web/API/Event/deepPath
-Event.scoped replaced by Event.composed
-https://developer.mozilla.org/en-US/docs/Web/API/Event/composed
+    - AudioScheduledSourceNode.start (inherits in OscillatorNode too) e.g., operation void start([num when]);
+    - AudioBufferSourceNode.start([num when, num grainOffset, num grainDuration]) can't be overloaded void start2([num when, num grainOffset, num grainDuration])
+* Attributes of type double changed see section **Attributes Type Change double to num** at the end of this document.
+* onWheel event exposed
+* Created for union of two kinds of canvas HTMLCanvasElement and OffscreenCanvas interface WebGLCanvas
+* all other RenderingContext
+    - readonly attribute WebGLCanvas canvas;
+* interface WebGLRenderingContext
+    - readonly attribute HTMLCanvasElement canvas;
+* KeygenElement was removed in Chrome 57
+* IDBFactory.webkitGetDatabaseNames() constructor removed in Chrome
+* Depreciated FileError and DomError have been removed use DomException
+    - error.code replaced with error.name  (e.g., see fileapi_directory_test.dart)
+    - Additional because FileError is gone there is no easy way to determine which errors are File only errors.  However, these are:
+    - NOT_FOUND_ERR
+    - SECURITY_ERR
+    - ABORT_ERR
+    - NO_MODIFICATION_ALLOWED_ERR
+    - INVALID_STATE_ERR
+    - SYNTAX_ERR
+    - INVALID_MODIFICATION_ERR
+    - QUOTA_EXCEEDED_ERR
+    - TYPE_MISMATCH_ERR
+* registerElement and register maps to old style (Chrome 50)
+* registerElement2 2nd parameter is a map {'prototype': xxx, 'extends': xxxx} not 2 separate arguments.
+* List<Rectangle> getClientRects() is now DomRectList getClientRects()
+* Rectangle getBoundingClientRect() is now DomRect getBoundingClientRect()
+* postMessage(/*any*/ message, String targetOrigin, [List<MessagePort> transfer]) changed to void postMessage(/*any*/ message, String targetOrigin, [List<Object> transfer]) transfer can now be ArrayBuffer, MessagePort and ImageBitmap
+* RTCPeerConnection.setLocalDescription and setRemoteDescription
+    - takes a Map setLocalDescription(Map description) description is a map e.g.,  {'type': localSessionDescription, 'sdp': fakeLensSdp}
+* nounce removed from HtmlScriptElement added to HtmlElement
+    - https://codereview.chromium.org/2801243002
+    - https://github.com/whatwg/html/issues/2369
+* Event.deepPath() was removed Chrome 54
+    - https://developer.mozilla.org/en-US/docs/Web/API/Event/deepPath
+* Event.scoped replaced by Event.composed
+    - https://developer.mozilla.org/en-US/docs/Web/API/Event/composed
 
 ***
 Summary of API changes from Chrome 51 thru Chrome 63:
@@ -73,3 +74,106 @@ Summary of API changes from Chrome 51 thru Chrome 63:
 <br>
 [https://developers.google.com/web/updates/tags/chrome63](https://developers.google.com/web/updates/tags/chrome63)
 <br>
+
+***
+### Attributes Type Change double to num
+* Accelerometer
+    - x, y, z
+* AmbientLightSensor
+    - illuminance
+* AnimationEffectTimingReadOnly
+    - delay, endDelay, iterationStart, iterations
+* AnimationEvent
+    - elapsedTime
+* AnimationPlaybackEvent
+    - currentTime, timelineTime
+* AnimationTimeline
+    - currentTime
+* BatteryManager
+    - chargingTime, dischargingTime, level
+* BlobEvent
+    - timecode
+* BudgetState
+    - budgetAt
+* Coordinates
+    - accuracy, altitude, altitudeAccuracy, heading, latitude, longitude, speed
+* CSSImageValue
+    - intrinsicHeight,intrinsicRatio, intrinsicWidth
+* DeviceAcceleration
+    - x, y, z
+* DeviceOrientationEvent
+    - alpha, beta, gamma
+* DeviceRotationRate
+    - alpha, beta, gamma
+* Event
+    - timeStamp
+* GamepadButton
+    - value
+* Gyroscope
+    - x, y, z
+* IntersectionObserverEntry
+    - intersectionRatio, time
+* Magnetometer
+    - x, y, z
+* HTMLMediaElement
+    - duration
+* MediaKeySession
+    - expiration
+* MediaSettingsRange
+    - max. min, step
+* MouseEvent
+    - clientX, clientY, pageX, pageY, screenX, screenY
+* Navigator
+    - deviceMemory
+* NetworkInformation
+    - downlink, downlinkMax
+* PaintSize
+    - height, width
+* PaintWorkletGlobalScope
+    - devicePixelRatio
+* Performance
+    - timeOrigin
+* PerformanceEntry
+    - duration, startTime
+* PerformanceNavigationTiming
+    - domComplete, domContentLoadedEventEnd, domContentLoadedEventStart, domInteractive, loadEventEnd, loadEventStart, redirectCount, unloadEventEnd, unloadEventStart
+* PerformanceResourceTiming
+    - connectEnd, connectStart, domainLookupEnd, domainLookupStart, encodedBodySize, fetchStart, redirectStart, requestStart, responseEnd, responseStart, secureConnectionStart, workerStart
+* PointerEvent
+    - height, pressure, tangentialPressure, width
+* HTMLProgressElement
+    - position
+* RTCRtpContributingSource
+    - timestamp
+* ScrollState
+    - deltaGranularity, deltaX, deltaY, velocityX, velocityY
+* Sensor
+    - timestamp
+* SpeechRecognitionAlternative
+    - confidence
+* SpeechSynthesisEvent
+    - elapsedTime
+* TextMetrics
+    - actualBoundingBoxAscent, actualBoundingBoxDescent, actualBoundingBoxLeft, actualBoundingBoxRight, alphabeticBaseline, emHeightAscent, emHeightDescent, fontBoundingBoxAscent, fontBoundingBoxDescent, hangingBaseline, ideographicBaseline, width
+* Touch
+    - clientX, clientY, force, pageX, pageY, radiusX, radiusY, rotationAngle, screenX, screenY
+* TransitionEvent
+    - elapsedTime
+* VRFrameOfReference
+    - emulatedHeight
+* VRStageBoundsPoint
+    - x, z
+* VRStageParameters
+    - sizeX, sizeZ
+* VideoPlaybackQuality
+    - creationTime
+* VisualViewport
+    - height, offsetLeft, offsetTop, pageLeft, pageTop, sca, width
+* WheelEvent
+    - deltaX, deltaY, deltaZ
+* Window
+    - devicePixelRatio, pageXOffset, pageYOffset
+* WorkerPerformance
+    - timeOrigin
+* XPathResult
+    - numberValue
