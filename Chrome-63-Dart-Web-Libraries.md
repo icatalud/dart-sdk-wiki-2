@@ -9,7 +9,7 @@ The Dart Web Libraries have not been updated since Chrome 50.  With this release
 * Web_audio
     - AudioScheduledSourceNode.start (inherits in OscillatorNode too) e.g., operation void start([num when]);
     - AudioBufferSourceNode.start([num when, num grainOffset, num grainDuration]) can't be overloaded void start2([num when, num grainOffset, num grainDuration])
-* Attributes of type double changed see section **Attributes Type Change double to num** at the end of this document.
+* Attributes of type double changed num see section "**Attributes Type Change double to num**" at the end of this document.
 * onWheel event exposed
 * Created for union of two kinds of canvas HTMLCanvasElement and OffscreenCanvas interface WebGLCanvas
 * all other RenderingContext
