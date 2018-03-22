@@ -5,8 +5,8 @@ The Dart Web Libraries have not been updated since Chrome 50.  With this release
     - Example of [Migrating initTouchEvent to Map](https://developers.google.com/web/updates/2016/09/chrome-54-deprecations#use_of_inittouchevent_is_removed)
 * TouchEvent constructor takes a map argument, strong mode catches these failures in our tests.
 * Web_audio
-    - AudioScheduledSourceNode.start (inherits in OscillatorNode too) e.g., operation void start([num when]);
-    - AudioBufferSourceNode.start([num when, num grainOffset, num grainDuration]) can't be overloaded void start2([num when, num grainOffset, num grainDuration])
+    - AudioScheduledSourceNode.start (inherits in OscillatorNode too) e.g., operation void start2([num when]);
+    - AudioBufferSourceNode.start([num when, num grainOffset, num grainDuration]) can't be overloaded void start([num when, num grainOffset, num grainDuration])
 * Attributes of type double changed num see section "**Attributes Type Change double to num**" at the end of this document.
 * onWheel event exposed
 * Created for union of two kinds of canvas HTMLCanvasElement and OffscreenCanvas interface WebGLCanvas
