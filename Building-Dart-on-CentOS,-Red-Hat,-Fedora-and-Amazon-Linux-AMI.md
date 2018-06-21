@@ -23,7 +23,7 @@ $ export PATH=$PATH:`pwd`/depot_tools
 
 ## Get the Dart source and generate makefiles
 
-[Follow these instructions](https://github.com/dart-lang/sdk/wiki/Getting-The-Source).
+[Follow these instructions](https://github.com/dart-lang/sdk/wiki/Building#source).
 
 ## Build
 
