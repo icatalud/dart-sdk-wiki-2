@@ -38,7 +38,7 @@ Each of these outcomes has a canonical name. Things like:
 
 There are other, more exotic outcomes. For the full list of them, see the code:
 
-[/tools/testing/dart/expectation.dart](https://github.com/dart-lang/sdk/blob/master/tools/testing/dart/expectation.dart)
+[pkg/status_file/lib/expectation.dart](https://github.com/dart-lang/sdk/blob/master/pkg/status_file/lib/expectation.dart)
 
 In a perfect world, every test would pass in every configuration and the test
 runner could simplify verify that every test's outcome was "Pass". Alas, life is
@@ -295,4 +295,4 @@ important ones are:
 
 There are some other special expectations, documented in the source here:
 
-[/tools/testing/dart/expectation.dart](https://github.com/dart-lang/sdk/blob/master/tools/testing/dart/expectation.dart)
+[/pkg/status_file/lib/expectation.dart](https://github.com/dart-lang/sdk/blob/master/pkg/status_file/lib/expectation.dart)
