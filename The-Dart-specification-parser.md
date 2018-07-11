@@ -1,5 +1,3 @@
-## The Dart Specification Parser
-
 **Author**: eernst@
 
 **Version**: 0.1
