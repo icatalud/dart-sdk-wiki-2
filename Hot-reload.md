@@ -197,7 +197,7 @@ The Dart VM also lacks a way to migrate field values during a change. In particu
 
 ## Defects
 
-In the following cases, the VM will accept changes, but it can produce incorrect results.
+In the following cases, the VM will accept changes, but it can produce incorrect results. Note all of these cases involve code pending on the call stack. In Flutter, reload usually happens at the top of the message loop where there is an empty call stack, so one is quite unlikely to encounter these cases in Flutter.
 
 - A call without an explicit receiver that changes meaning from an instance call to a static call (or vice versa), that was on the stack at the time of reload.
 
