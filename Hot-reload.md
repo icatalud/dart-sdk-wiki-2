@@ -4,9 +4,11 @@ The Dart VM can apply changes to a running (live) program, which it calls _hot r
 
 The main principles of reload's behavior are
 
- * The program behaves as if method lookup happens at every call.
- * The "atoms" of reload are methods. Methods are never changed, but method dictionaries are updated with new methods.
- * Fields retain their values.
+ * [The program behaves as if method lookup happens at every call.](#pervasive-late-binding)
+ * [The "atoms" of reload are methods. Methods are never changed, but method dictionaries are updated with new methods.](#immutable-methods)
+ * [Fields retain their values.](#state-is-retained)
+
+It's also important to note that hot reloading only changes the behavior of the program going forward. It does not change the program's state to reflect what would have happened if the new program had been running from the beginning. The behavior of a hot reloaded program can differ from the behavior of both the old and the new program running without a hot reload.
 
 ## Pervasive late-binding
 
