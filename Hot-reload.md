@@ -2,11 +2,11 @@
 
 The Dart VM can apply changes to a running (live) program, which it calls _hot reload_. The semantics are very close to those of Smalltalk, which doesn't have a name for this feature since in most Smalltalk implementations program changes can only be made in a live programming environment.
 
-The main principles of reload are
+The main principles of reload's behavior are
 
  * The program behaves as if method lookup happens at every call.
  * The "atoms" of reload are methods. Methods are never changed, but method dictionaries are updated with new methods.
- * Fields are not reset.
+ * Fields retain their values.
 
 ## Pervasive late-binding
 
@@ -118,7 +118,7 @@ before
 
 ## State is retained
 
-Changes do not reset fields, neither the fields of instances nor those of classes or libraries. Resetting all fields would make a hot reload equivalent to a restart.
+Hot reload does not reset fields, neither the fields of instances nor those of classes or libraries. Resetting all fields would make a hot reload equivalent to a restart.
 
 Before:
 ```
@@ -183,9 +183,13 @@ The cases where a reload is rejected are
 
 (Schema changes to type arguments are not safe because of the type argument prefix optimization.)
 
-- Changes to the number of native fields (`class C extends NativeFieldWrapper1 {}` <=> `class C extends NativeFieldWrapper2 {}`).
+- Changes to a library with deferred imports (`import 'a' deferred as a`).
 
-(Native code usually cannot tolerate live changes.)
+(This simply hasn't been implemented.)
+
+- Changes to the number of native fields (`class C extends NativeFieldWrapperClass1 {}` <=> `class C extends NativeFieldWrapperClass2 {}`).
+
+(Changing the shape of native wrappers generally requires corresponding changes to the native code.)
 
 The Dart VM also lacks a way to migrate field values during a change. In particular, there is no way to communicate the intention of a renamed field to carry the value over from the old name to the new name. The Dart VM only sees addition and removal of unrelated fields.
 
