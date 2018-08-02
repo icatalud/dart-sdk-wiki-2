@@ -14,7 +14,7 @@ It's also important to note that hot reloading only changes the behavior of the 
 
 The program behaves as if method lookup happens at every call. Any call that runs after a reload, even those call sites that have previously run or are pending on the stack, should reflect the result of a lookup in the new program rather than the old program.
 
-(In the implementation, the VM aggressively attempts to avoid method lookups by using caches and inlining. To preserve the semantics of hot reloadinline , caches are cleared and inlining is unfolded at the time of a reload.)
+(In the implementation, the VM aggressively attempts to avoid method lookups by using caches and inlining. To preserve the semantics of hot reload, inline caches are cleared and inlining is unfolded at the time of a reload.)
 
 Before:
 ```
