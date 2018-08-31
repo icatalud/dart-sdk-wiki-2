@@ -245,7 +245,7 @@ There are a few other miscellaneous labels you might run into:
     should be a comment explaining what it's blocked on. When possible, it will
     link directly to another issue that is blocking this one.
 
-*   **[cla-yes][]**, **[cla-no][]**: Before we can accept a change from a
+*   **[cla: yes][]**, **[cla: no][]**: Before we can accept a change from a
     non-Google contributor, they must sign our [contributor license
     agreement][cla]. We have a bot that requests that they do that and tracks
     whether they have using these labels.
@@ -271,8 +271,8 @@ There are a few other miscellaneous labels you might run into:
 [area-meta]: https://github.com/dart-lang/sdk/labels/area-meta
 [blocked]: https://github.com/dart-lang/sdk/labels/blocked
 [branches]: https://github.com/dart-lang/sdk/wiki/Branches-and-releases
-[cla-no]: https://github.com/dart-lang/sdk/labels/cla-no
-[cla-yes]: https://github.com/dart-lang/sdk/labels/cla-yes
+[cla: no]: https://github.com/dart-lang/sdk/labels/cla%3A%20no
+[cla: yes]: https://github.com/dart-lang/sdk/labels/cla%3A%20yes
 [cla]: https://cla.developers.google.com/about/google-individual
 [closed-as-intended]: https://github.com/dart-lang/sdk/labels/closed-as-intended
 [closed-cannot-reproduce]: https://github.com/dart-lang/sdk/labels/closed-cannot-reproduce
