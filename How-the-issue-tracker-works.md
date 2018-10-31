@@ -250,6 +250,15 @@ There are a few other miscellaneous labels you might run into:
     agreement][cla]. We have a bot that requests that they do that and tracks
     whether they have using these labels.
 
+*   **[contributions-welcome][]**: This marks an issue which has been vetted as
+    "legitimate," and which the owning subteam would welcome a contribution
+    from an external developer. Resolving an issue marked with this label
+    should not be overly difficult, and should not require a great amount of
+    code. This label is typically applied to bugs and documentation requests,
+    rather than feature requests, due to the lower cost of review and
+    maintenance.
+
+
 *   **[merge-to-dev][]**, **[merge-to-stable][]**: These are used to track
     requests to cherry-pick a change from master to one of the [release
     branches][branches].
@@ -280,6 +289,7 @@ There are a few other miscellaneous labels you might run into:
 [closed-invalid]: https://github.com/dart-lang/sdk/labels/closed-invalid
 [closed-not-planned]: https://github.com/dart-lang/sdk/labels/closed-not-planned
 [closed-obsolete]: https://github.com/dart-lang/sdk/labels/closed-obsolete
+[contributions-welcome]: https://github.com/dart-lang/sdk/labels/contributions-welcome
 [customer-vm]: https://github.com/dart-lang/sdk/labels/customer-vm
 [dartlang.org]: https://www.dartlang.org
 [merge-to-dev]: https://github.com/dart-lang/sdk/labels/merge-to-dev
