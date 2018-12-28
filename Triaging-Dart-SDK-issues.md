@@ -21,14 +21,14 @@
   * Can be affected by the quantity/priority of existing issues - *If everything is P0, nothing is P0*
   * May evolve as other issues are resolved and new issues are opened
 * Levels
-    * **p0-critical**: Drop everything and fix it.
+    * **[p0-critical][]**: Drop everything and fix it.
         * For dev channel: blocks the release. Valid cherry-pick.
         * For release channel: worthy of a "dot" release
-	* **p1-high**: Planned for the in-progress release
+	* **[p1-high][]**: Planned for the in-progress release
 	    * Should be aligned with other work to ensure likely completion in current release
-  * **p2-medium**: Important work for later release.
+  * **[p2-medium][]**: Important work for later release.
       * Should be done – eventually.
-  * **p3-low**: Maybe, someday
+  * **[p3-low][]**: Maybe, someday
     * First candidates to close as "closed-not-planned"
 * When we enter cherry pick season for release X...
     * p0 issues: are the only fixes that will be taken for release X
@@ -39,3 +39,7 @@
 [SDK triage query]: https://dart-sdk-email.appspot.com/triage
 [GitHub Issue Mover]: https://github-issue-mover.appspot.com/
 [Dart SDK email tool]: https://dart-sdk-email.appspot.com/
+[p0-critical]: https://github.com/dart-lang/sdk/labels/p0-critical
+[p1-high]: https://github.com/dart-lang/sdk/labels/p1-high
+[p2-medium]: https://github.com/dart-lang/sdk/labels/p2-medium
+[p3-low]: https://github.com/dart-lang/sdk/labels/p3-low
