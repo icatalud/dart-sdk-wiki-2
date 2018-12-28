@@ -159,7 +159,7 @@ The reasons are:
     Mistakes happen. This label means we couldn't make heads or tails of the
     issue.
 
-    Most of the time, we try to avoid this and instead use "[need-info][]" to
+    Most of the time, we try to avoid this and instead use "[needs-info][]" to
     get clarification from the person who filed the issue.
 
 *   **[closed-obsolete][]**: The issue has been around for a long time with no
@@ -263,7 +263,7 @@ There are a few other miscellaneous labels you might run into:
     requests to cherry-pick a change from master to one of the [release
     branches][branches].
 
-*   **[need-info][]**: Like the name says, this means we need more
+*   **[needs-info][]**: Like the name says, this means we need more
     information. This is often because the initial issue description is unclear.
     Other times, it means we have done some work fixing the issue and want
     someone else to validate the solution.
@@ -294,7 +294,7 @@ There are a few other miscellaneous labels you might run into:
 [dartlang.org]: https://www.dartlang.org
 [merge-to-dev]: https://github.com/dart-lang/sdk/labels/merge-to-dev
 [merge-to-stable]: https://github.com/dart-lang/sdk/labels/merge-to-stable
-[need-info]: https://github.com/dart-lang/sdk/labels/need-info
+[needs-info]: https://github.com/dart-lang/sdk/labels/needs-info
 [p0-critical]: https://github.com/dart-lang/sdk/labels/p0-critical
 [p1-high]: https://github.com/dart-lang/sdk/labels/p1-high
 [p2-medium]: https://github.com/dart-lang/sdk/labels/p2-medium
