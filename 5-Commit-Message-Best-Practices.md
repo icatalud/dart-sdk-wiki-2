@@ -1,4 +1,11 @@
-1. First line is a capitalized, short (50 chars or less) summary
+1. First line is a capitalized, short (50 chars or less) summary,
+   * Please include the component for which the change is being made in the first line
+     * **[Analyzer]** short (50 chars or less) summary
+     * **[dart2js]** short (50 chars or less) summary
+     * **[CFE]** short (50 chars or less) summary
+     * **[CoreLib]** short (50 chars or less) summary
+     * **[ddc]** short (50 chars or less) summary
+     * **[VM - Runtime]** short (50 chars or less) summary
 
 1. **Always** add a blank line before more information. Many git tools assume this layout.
 
@@ -17,7 +24,7 @@
 ## Example
 
 ```
-Short (50 chars or less) summary of changes
+[VM - GC] Short (50 chars or less) summary of changes
 
 More detailed explanatory text, if necessary. Wrap it to about 72 characters or so. In some
 contexts, the first line is treated as the subject of an email and the rest of the text as the
