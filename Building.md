@@ -35,6 +35,11 @@ export PATH="$PATH:$PWD/depot_tools"
 ## Mac OS X
 
 Install XCode.
+> If you encounter the error: `xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance`, run the command: 
+> ```
+> sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+> ```
+> See https://stackoverflow.com/questions/17980759.
 
 Install Chromium's [depot tools](http://dev.chromium.org/developers/how-tos/install-depot-tools):
 ```bash
