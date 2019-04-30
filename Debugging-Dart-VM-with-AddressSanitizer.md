@@ -9,8 +9,9 @@ AddressSanitizer (ASan) support requires compiling with additional flags. Run gn
 
 Example command-line (currently detects some leaks, see https://github.com/dart-lang/sdk/issues/24467 ):
 
-    export ASAN_SYMBOLIZER_PATH=`pwd`/buildtools/toolchain/clang+llvm-x86_64-linux/bin/llvm-symbolizer
-    ASAN_OPTIONS=handle_segv=0:detect_leaks=1 out/DebugX64/dart foo.dart
+    export ASAN_SYMBOLIZER_PATH="$PWD/buildtools/linux-x64/clang/bin/llvm-symbolizer"
+    export ASAN_OPTIONS=handle_segv=0:detect_leaks=1:symbolize=1
+    ./out/ReleaseX64/dart foo.dart
 
 The handle_segv=0 is only crucial when running through the test suite, wherein several tests are expected to segfault, and will fail if ASan installs its own segfault handler.
 
