@@ -3,13 +3,13 @@
 * Look through issues that don't have an area assigned.
   * Use the [SDK triage query].
 * Does the issue relate to code in the SDK?
-  * Assign to the right area by adding an `area-*` label.
+  * Assign to the right area by adding an `area-*` label. **Note: `area-language` is deprecated. New language issues should be [moved][move] to the [language repo](https://github.com/dart-lang/language).**
 * Is the issue in `area-library`?
   * Assign the right `library-*` label, too.
 * Is it obvious if the issue is a bug or enhancement?
   * Optional: Add `type-bug` or `type-enhancement` if you can.
 * Does the issue relate to code in another `dart-lang` project/package?
-  * Move the issue to the right repo by using the [GitHub Issue Mover][].
+  * Move the issue to the right repo by using [`/move to ...`][move].
 * Get emails when issues are tagged with labels you care about
   * Use the [Dart SDK email tool].
 
@@ -37,7 +37,7 @@
 		* p1 issues can be changed to p2/3 and milestone flag removed
 
 [SDK triage query]: https://dart-sdk-email.appspot.com/triage
-[GitHub Issue Mover]: https://github-issue-mover.appspot.com/
+[move]: https://github.com/apps/move
 [Dart SDK email tool]: https://dart-sdk-email.appspot.com/
 [p0-critical]: https://github.com/dart-lang/sdk/labels/p0-critical
 [p1-high]: https://github.com/dart-lang/sdk/labels/p1-high
