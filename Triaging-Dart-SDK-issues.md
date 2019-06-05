@@ -36,7 +36,7 @@
 		* Milestone flag should be changed to release X+1 or
 		* p1 issues can be changed to p2/3 and milestone flag removed
 
-[SDK triage query]: https://dart-sdk-email.appspot.com/triage
+[SDK triage query]: https://goto.google.com/dart-triage
 [move]: https://github.com/apps/move
 [Dart SDK email tool]: https://dart-sdk-email.appspot.com/
 [p0-critical]: https://github.com/dart-lang/sdk/labels/p0-critical
