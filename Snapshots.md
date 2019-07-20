@@ -1,18 +1,18 @@
-# Script Snapshots
+# Kernel Snapshots
 
-The Dart VM has long supported *script snapshots* that allow a Dart programmer to package up an application into a single file and reduce startup time.
+Kernel snapshots allow a Dart programmer to package up an application into a single file and reduce startup time. 
 
 ```
-$ dart --snapshot=hello.dart.snapshot hello.dart
+$ dart --snapshot-kind=kernel --snapshot=hello.dart.snapshot hello.dart
 $ dart hello.dart.snapshot arguments-for-use
 Hello, world!
 ```
 
-These snapshots contain tokenized sources, but lack parsed classes and functions and lack compiled code. This makes them fairly small and portable between CPU architectures. But it also means the Dart VM must still parse and compile all the classes and functions that are used in each run, which can be a substanial portion of run time for large programs that process a small input.
+These snapshots contain binary form of [Kernel AST](https://github.com/dart-lang/sdk/tree/master/pkg/kernel), but lack parsed classes and functions and lack compiled code. This makes them portable between CPU architectures. But it also means the Dart VM must still convert AST into internal representation and compile functions that are used in each run, which can be a substantial portion of run time for large programs that process a small input.
 
-# Application Snapshots
+# JIT Application Snapshots (app-jit)
 
-Starting in 1.21, the Dart VM also supports *application snapshots*, which include all the parsed classes and compiled code generated during a training run of a program.
+Starting in 1.21, the Dart VM also supports *application snapshots* also known as *app-jit* snapshots, which include all the parsed classes and compiled code generated during a training run of a program.
 
 ```
 $ dart --snapshot=hello.dart.snapshot --snapshot-kind=app-jit hello.dart arguments-for-training
@@ -23,17 +23,14 @@ Hello, world!
 
 When running from an application snapshot, the Dart VM will not need to parse or compile classes and functions that were already used during the training run, so it starts running user code sooner.
 
-These snapshots are CPU architecture specific, so a snapshot created by an x64 VM cannot run on an IA32 VM or vice versa. Also, because different code is generated in production mode and checked mode, an app snapshot created in production mode cannot be run in checked mode or vice versa.
+These snapshots are CPU architecture specific, so a snapshot created by an x64 VM cannot run on an IA32 VM or vice versa.
 
-The above are known *app-jit* snapshots. There is also an *app-aot* variant that does not use a training run, but compiles the entire program starting from main. App-AOT snapshots are needed to run compiled code on iOS, and they used by [Flutter](https://flutter.io) its profile and release modes.
+# AOT Application Snapshots (app-aot)
 
-# Comparison
+There is also an *app-aot* variant that does not use a training run, but compiles the entire program starting from main ahead-of-time (AOT). These snapshots can be generated using `dart2aot` script and can be run using `dartaotruntime` binary, both included with SDK starting from version 2.4. 
 
-For comparison, here are the relative sizes and times for dart2js compiling hello world and itself.
-
-| Kind             | Size (B) | Startup (ms) | Compile Hello World (ms) | Compile Itself (ms) |
-| ---------------- | -------: |------------: | -----------------------: | ------------------: |
-| Source           |  9598555 |          711 |                     2471 |               60500 |
-| Script snapshot  |  3680518 |          224 |                     2307 |               62890 |
-| App-JIT snapshot | 19484512 |           81 |                      719 |               58394 |
-| App-AOT snapshot | 29219040 |           40 |                      541 |               74429 |
+```
+$ dart2aot hello.dart hello.dart.snapshot
+$ dartaotruntime hello.dart.snapshot
+Hello, world! 
+```
