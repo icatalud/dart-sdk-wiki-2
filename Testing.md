@@ -8,15 +8,14 @@ about its behavior.
 We engineer that reliability using automated tests. The tests for the language
 and core libraries, which is what this doc is about, live in the SDK repo under
 `tests/`. As of this writing, there are 25,329 Dart files in there, containing
->1.5 million lines of code and >95,578 individual assertions.
-
-Making this even harder is that Dart includes a variety of tools and
+over 1.5 million lines of code and over 95,000 individual assertions. Making
+this even harder is that Dart includes a variety of tools and
 implementations. We have multiple compilers, runtimes, and static analyzers.
 Each supports several platforms and options. All told, we currently have 476
 supported, tested configurations.
 
-Since our testing needs are both complex and unique, we have a custom testing
-format and test runner for executing those tests. This doc explains how to work
+Since our testing needs are both complex and unique, we several custom test
+formats and our own test runner for executing those tests. This doc explains how to work
 with tests and use the test runner.
 
 ## Concepts
