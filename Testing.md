@@ -647,13 +647,20 @@ class A {
 }
 ```
 
-A line comment containing only spaces and consecutive carets marks the beginning
-of an **error expectation**. The error's location is the previous line and the
-column containing the first caret. The length is the number of carets. Following
-that is a line containing a line comment starting with "[analyzer] " followed by
-an analyzer error code. Following that is one or more lines containing line
-comments with error message text. The first one must start with "[cfe]". A line
-that is not simply a line comment marks the end of the expectation.
+Each group of adjacent line comments here defines an **error expectation**. The
+first comment line defines the error's location. The line is the preceding line,
+the column is the column containing the first caret, and the length is the
+number of carets. If the preceding line is itself part of some other error
+expectation, it will be skipped over, so you can define multiple errors that
+are reported on the same line:
+
+```dart
+int i = "not int" / 345;
+//      ^^^^^^^^^
+// [analyzer] STATIC_WARNING.SOME_ERROR
+//                  ^^^
+// [analyzer] STATIC_WARNING.ANOTHER_ERROR
+```
 
 In cases where the location doesn't neatly fit into this syntax&mdash;it either
 starts before column 2 or spans multiple lines&mdash;an explicit syntax can be
@@ -664,6 +671,25 @@ var obj1 = [...(123)];
 // [error line 1, column 17, length 3]
 // [analyzer] CompileTimeErrorCode.AMBIGUOUS_SET_OR_MAP_LITERAL_BOTH
 // [cfe] Error: Unexpected type 'int' of a spread.  Expected 'dynamic' or an Iterable.
+```
+
+After the location comment line are line defining how analyzer and CFE
+should report the error. First, a line comment starting with `[analyzer]`
+followed by an analyzer error code specifies that analyzer should report an
+error at this location with this error code. If omitted, analyzer is not
+expected to report this error.
+
+Finally, a line comment starting with "[cfe] " followed by an error message
+specifies that CFE should report an error with the given text at this location.
+If omitted, the CFE is not expected to report an error here. If the CFE error
+message is longer than a single line, you can have further line comments after the initial `// [cfe]` one:
+
+```dart
+var obj1 = [...(123)];
+//             ^^^^^
+// [cfe] Error: Unexpected type 'int' of a spread.
+// Expected 'dynamic' or an Iterable.
+// Another line of error message text.
 ```
 
 When the test runner runs a test, it looks for and parses all error
