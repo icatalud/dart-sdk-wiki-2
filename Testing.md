@@ -29,7 +29,7 @@ concepts and terms, so let's get those out of the way first.
     before there were any functioning implementations of Dart was written in
     Python.) When we started migrating away from status files, we created a
     new entrypoint script, "test.dart". The pub package that contains all of
-    the real code is name "test_runner" and lives at `pkg/test_runner`.
+    the real code is named "test_runner" and lives at `pkg/test_runner`.
 
 *   **Test suite** - A collection of test files that can be run. Most suites
     correspond to a top level directory under `tests/`: `language_2`, `lib_2`,
@@ -52,7 +52,7 @@ concepts and terms, so let's get those out of the way first.
     testing them on our bots.
 
 *   **Bots**, **BuildBots**, **builders** - The infrastructure for automatically
-    running the tests the cloud across a number of configurations. Whenever a
+    running the tests in the cloud across a number of configurations. Whenever a
     change lands on master, the bots run all of the tests to determine what
     behavior changed.
 
