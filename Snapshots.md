@@ -30,7 +30,7 @@ These snapshots are CPU architecture specific, so a snapshot created by an x64 V
 There is also an *app-aot* variant that does not use a training run, but compiles the entire program starting from main ahead-of-time (AOT). These snapshots can be generated using `dart2aot` script and can be run using `dartaotruntime` binary, both included with SDK starting from version 2.4. 
 
 ```
-$ dart2aot hello.dart hello.dart.snapshot
-$ dartaotruntime hello.dart.snapshot
+$ dart2aot hello.dart hello.dart.aot
+$ dartaotruntime hello.dart.aot
 Hello, world! 
 ```
