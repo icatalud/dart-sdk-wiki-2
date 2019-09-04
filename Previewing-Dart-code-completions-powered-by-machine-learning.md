@@ -9,7 +9,7 @@ We recommend using the [Flutter master channel](https://github.com/flutter/flutt
 
 ### VS Code
 
-* Enable the following settings in settings.json (this can be your global settings.json, or a workspace specific settings.json)
+* Enable the following settings in `settings.json` (this can be your global `settings.json`, or a workspace specific `settings.json`)
   * `"dart.analyzerAdditionalArgs": ["--enable-completion-model"]`<br>This enables the ML completions experiment.
 
   * `"editor.suggestSelection": "first".`<br>This ensures that Code shows the first available completion (Code has different default where it tried to remember past completions).
