@@ -1,6 +1,6 @@
 We have a new Dart developer productivity feature ready for preview. The feature augments traditional Dart code completion with new predictions based on machine learning. 
 
-The predictions are based on a local model — powered by TensorFlow Lite — so the predictions are made locally and offline. The training dataset is Open-source Dart code from GitHub through BigQuery public datasets.
+The predictions are based on a local model — powered by [TensorFlow Lite](https://www.tensorflow.org/lite) — so the predictions are made locally and offline. The training dataset is [open-source Dart code from GitHub](https://console.cloud.google.com/marketplace/details/github/github-repos).
 
 ## Required build
 We recommend using the [Flutter master channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels), or a [Dart dev channel](https://dart.dev/tools/sdk/archive#dev-channel) if you want to preview it to ensure you get our most recent performance and stability improvements during the preview.
