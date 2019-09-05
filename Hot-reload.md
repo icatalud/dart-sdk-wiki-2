@@ -17,7 +17,7 @@ The program behaves as if method lookup happens at every call. Any call that run
 (In the implementation, the VM aggressively attempts to avoid method lookups by using caches and inlining. To preserve the semantics of hot reload, inline caches are cleared and inlining is unfolded at the time of a reload.)
 
 Before:
-```
+```dart
 class C {
   foo() => "before";
 }
@@ -30,7 +30,7 @@ main() {
 ```
 
 After:
-```
+```dart
 class C {
   foo() => "after";
 }
@@ -55,7 +55,7 @@ The "atoms" of reload are methods. Methods are never mutated. Changes to a metho
 Closures capture their function when they are created. A closure always has the same function before and after a change, and all invocations of a given closure run the same function.
 
 Before:
-```
+```dart
 class C {
   deferredPrint() {
     return () => print("before");
@@ -71,7 +71,7 @@ main() {
 ```
 
 After:
-```
+```dart
 class C {
   deferredPrint() {
     return () => print("after");
@@ -95,7 +95,7 @@ before
 Stack frames capture their function. A stack frame will continue to run the same function until it returns.
 
 Before:
-```
+```dart
 main() {
   print("before");
   reload();
@@ -104,7 +104,7 @@ main() {
 ```
 
 After:
-```
+```dart
 main() {
   print("after");
   reload();
@@ -123,7 +123,7 @@ before
 Hot reload does not reset fields, neither the fields of instances nor those of classes or libraries. Resetting all fields would make a hot reload equivalent to a restart.
 
 Before:
-```
+```dart
 var foo = "before";
 main() {
   print(foo);
@@ -133,7 +133,7 @@ main() {
 ```
 
 After:
-```
+```dart
 var foo = "after";
 main() {
   print(foo);
@@ -151,7 +151,7 @@ before
 Remember that statics fields in Dart are lazily initialized. If a field has not been accessed before a change, the new initializer will run if it is accessed after the change.
 
 Before:
-```
+```dart
 var foo = "before";
 main() {
   reload();
@@ -160,7 +160,7 @@ main() {
 ```
 
 After:
-```
+```dart
 var foo = "after";
 main() {
   reload();
@@ -202,7 +202,7 @@ In the following cases, the VM will accept changes, but it can produce incorrect
 - A call without an explicit receiver that changes meaning from an instance call to a static call (or vice versa), that was on the stack at the time of reload.
 
 Before:
-```
+```dart
 bar() => "before";
 class C {
   foo() {
@@ -217,7 +217,7 @@ main() {
 ```
 
 After:
-```
+```dart
 class C {
   bar() => "after";
   foo() {
@@ -246,7 +246,7 @@ before
 - A super call that was on the stack at the time of reload has a new target.
 
 Before:
-```
+```dart
 class A { 
   bar() => "A-bar";
 }
@@ -265,7 +265,7 @@ main() {
 ```
 
 After:
-```
+```dart
 class A {}
 class B extends A {
   bar() => "B-bar";
@@ -298,7 +298,7 @@ A-bar
 - A static call that was on the stack at the time of reload changes between having a target and having no target.
 
 Before:
-```
+```dart
 foo() => "before";
 main() {
   print(foo());
@@ -308,7 +308,7 @@ main() {
 ```
 
 After:
-```
+```dart
 main() {
   print(foo());
   reload();
