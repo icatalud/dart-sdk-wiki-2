@@ -33,5 +33,5 @@ We recommend using the [Flutter master channel](https://github.com/flutter/flutt
 If you have feedback, please log a bug [using this link](https://github.com/dart-lang/sdk/issues/new?labels=area-analyzer,analyzer-completion&assignees=lambdabaa). When reporting a bug, please include the following:
 
 1. Detailed repro steps
-1. Version output from flutter --version / dart --version
+1. Version output from `flutter --version` / `dart --version`
 1. A detailed description or screenshot of the completions seen
