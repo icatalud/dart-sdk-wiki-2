@@ -26,7 +26,7 @@ We recommend using the [Flutter master channel](https://github.com/flutter/flutt
 
 * Edit the **dart.server.additional.arguments** configuration value to include the command-line argument: `--enable-completion-model`
 
-  ![image3](https://user-images.githubusercontent.com/535859/64313267-fd4c7580-cf5f-11e9-8447-6254ba999e0b.gif)
+  ![image3](https://user-images.githubusercontent.com/535859/64433292-04b07380-d073-11e9-9655-b65c0dee5952.gif)
 
 
 ## Providing feedback
