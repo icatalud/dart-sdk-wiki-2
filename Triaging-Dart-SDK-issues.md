@@ -9,7 +9,7 @@
 * Is it obvious if the issue is a bug or enhancement?
   * Optional: Add `type-bug` or `type-enhancement` if you can.
 * Does the issue relate to code in another `dart-lang` project/package?
-  * Move the issue to the right repo by using [`/move to ...`][move].
+  * Move the issue to the right repo by using the `Transfer issue` link (between github orgs, use [`/move to ...`][move]).
 * Get emails when issues are tagged with labels you care about
   * Use the [Dart SDK email tool].
 
