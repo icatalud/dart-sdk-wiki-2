@@ -253,9 +253,7 @@ The basic process the test runner follows is:
 
     If the result and status are the same, the test runner reports the test as
     passing. Otherwise, it reports a failure and shows you the both the result
-    and status.
-
-    To make things profoundly confusing, it refers to the status as
+    and status. To make things profoundly confusing, it refers to the status as
     "expectation".
 
 The fact that we have three levels of "result" which then get mixed together is
@@ -276,7 +274,8 @@ You run it on analyzer before the analyzer team has had a chance to implement
 the new behavior. This test is brand new, so it has no existing status and
 defaults to "Pass". You'll get:
 
-*   Expectation: CompileTimeError. That's what the little multitest marker comment means.
+*   Expectation: CompileTimeError. That's what the multitest marker comment
+    means.
 *   Outcome: Pass. In Dart today, this code has no errors, so the analyzer
     doesn't report any compile error.
 *   Actual: MissingCompileTimeError. There was supposed to be an error reported,
@@ -300,7 +299,7 @@ whole test will report as successful.
 
 In short:
 
-**When the test runner reports a test as succeeding it means difference between
+**When the test runner reports a test as succeeding it means the difference between
 the tool's actual behavior and intended behavior has not changed since the last
 time a human looked at it.**
 
@@ -682,7 +681,8 @@ expected to report this error.
 Finally, a line comment starting with "[cfe] " followed by an error message
 specifies that CFE should report an error with the given text at this location.
 If omitted, the CFE is not expected to report an error here. If the CFE error
-message is longer than a single line, you can have further line comments after the initial `// [cfe]` one:
+message is longer than a single line, you can have further line comments after
+the initial `// [cfe]` one:
 
 ```dart
 var obj1 = [...(123)];
@@ -740,7 +740,8 @@ acceptable. Also, the column and length information is ignored. That enables
 this workflow:
 
 1.  Someone adds a test for an unimplemented feature using `unspecified` lines.
-2.  The analyzer or CFE team implements the feature and lands support. The tests start passing.
+2.  The analyzer or CFE team implements the feature and lands support. The tests
+    start passing.
 3.  In order to pin down the precise behavior now that it's known, someone goes
     back and replaces `unspecified` with the actual error code or message. Now,
     any minor change will cause the test to break so we notice if, for example,
