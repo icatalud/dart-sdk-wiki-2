@@ -185,7 +185,7 @@ Adjust the flags to your needs: appropriate values for `--arch` and `--tasks` wi
 Dart analyzer tests example:
 ```bash
 ./tools/test.py \
-  --compiler dartanalyzer \
+  --compiler dart2analyzer \
   --runtime none \
   --progress color \
   --arch x64 \
