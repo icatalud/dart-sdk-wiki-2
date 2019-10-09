@@ -6,6 +6,15 @@ The Dart VM runs on a variety of ARM processors on Linux and Android. This docum
 
 If you are building natively on the device you will be running on, you can skip this step.  The build scripts download a cross-compilation toolchain using clang, so you do not need to install a cross-compiler yourself.
 
+## Linux
+
+If you are running Ubuntu, you can obtain a cross-compiler by doing the following:	
+
+```	
+$ sudo apt-get install g++-arm-linux-gnueabihf  # For 32-bit ARM (ARMv7)	
+$ sudo apt-get install g++-aarch64-linux-gnu    # For 64-bit ARM	
+```	
+
 ## Android
 
 Follow instructions under "One-time Setup" under Android
