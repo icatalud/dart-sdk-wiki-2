@@ -17,6 +17,18 @@
 Dart uses some new C++ features from C++11 (previously called C++0x).  Compilers that support these features
 are GCC version 4.8 (4.6 is known not to work) and Microsoft Visual Studio 2015 (available in a free community edition for many users).  The clang compiler for linux, included in the Dart distribution, and the compilers used by Xcode on macOS (previously called OS X) are also known to work.
 
+## Python 2 
+
+Dart SDK current requires Python 2 to build as our build scripts are not compatible with Python 3. 
+
+If you default installation is Python 3 you could workaround this by using `virtualenv`: 
+
+```
+$ virtualenv .env -p python2
+$ source .env/bin/activate
+# Can now run Dart SDK build scripts
+```
+
 ## Linux
 
 Install build tools:
