@@ -29,6 +29,8 @@ $ source .env/bin/activate
 # Can now run Dart SDK build scripts
 ```
 
+On Windows you should instead ensure that `python.bat` wrapper from `depot_tools` comes ahead of any other python binaries in your `PATH` as per [these](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_get_depot_tools) instructions.
+
 ## Linux
 
 Install build tools:
